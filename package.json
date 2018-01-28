@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "react-scripts": "1.1.0",
+    "deploy": "cp -r build/* ~/webapps/fhwrdh_resume_react"
   },
   "scripts": {
     "start": "react-scripts start",
