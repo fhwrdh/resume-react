@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mdi-react": "^3.3.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "react-responsive": "^4.1.0",
+    "react-scripts": "1.1.0",
+    "styled-components": "^3.0.2"
   },
   "scripts": {
     "deploy": "npm run build && cp -r build/* ~/webapps/fhwrdh_resume_react",
