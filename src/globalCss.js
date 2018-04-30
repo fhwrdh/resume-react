@@ -5,7 +5,10 @@ injectGlobal`
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    color: #333;
+    @media screen {
+      background-color: #FCFCFC;
+      color: #333;
+    }
   }
   html, body, #root {
     height: 100%;
@@ -16,7 +19,7 @@ injectGlobal`
     border-bottom: 1px solid transparent;
   }
   a:hover {
-    color: #1565C0;
+    color: #aaa;
   }
 
   .mdi-icon {

@@ -2,6 +2,9 @@ import React from 'react';
 import styled, {css} from 'styled-components';
 import {ChevronRightIcon} from 'mdi-react';
 
+export const textShadowOnDark = css`
+  text-shadow: 1px 1px #333;
+`;
 export const border = '1px solid #ccc';
 export const titleFont = css`
   font-family: 'Open Sans', sans-serif;
@@ -15,8 +18,19 @@ export const Container = styled.div`
 `;
 
 export const Left = styled.div`
-  padding: 1.5em;
   min-width: 250px;
+  padding: 1.5em;
+  @media screen {
+    border-right: 5px solid black;
+    background-color: #304655;
+    color: #eee;
+    & h2 {
+      ${textShadowOnDark};
+    }
+  }
+  @media print {
+    padding-left: 0;
+  }
 `;
 
 export const Right = styled.div`
@@ -24,6 +38,9 @@ export const Right = styled.div`
   border-left: ${border};
   min-width: 500px;
   flex-grow: 2;
+  @media print {
+    padding-right: 0;
+  }
 `;
 
 export const Header = styled.div`
@@ -32,6 +49,10 @@ export const Header = styled.div`
 `;
 export const Name = styled.h1`
   margin: 0;
+  font-weight: 600;
+  @media screen {
+    ${textShadowOnDark};
+  }
 `;
 
 export const Section = styled.div`
@@ -41,6 +62,8 @@ export const Section = styled.div`
 export const SectionTitle = styled.h2`
   ${titleFont};
   margin-bottom: 0.5em;
+  font-size: 1.7em;
+  font-variant: all-small-caps;
 `;
 
 export const Description = styled.ul`
@@ -90,7 +113,9 @@ export const Icons = styled.div`
 // ====================================================
 //
 export const Company = styled.div`
-  border-bottom: ${border};
+  &:not(:last-child) {
+    border-bottom: ${border};
+  }
   margin-top: 1em;
 `;
 
@@ -98,7 +123,7 @@ export const Title = styled.h3`
   margin-bottom: 0;
 `;
 export const CompanyName = styled.h4`
-  margin: .3em 0;
+  margin: 0.3em 0;
 `;
 
 export const Details = styled.h5`

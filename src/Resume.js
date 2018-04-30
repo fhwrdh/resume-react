@@ -39,11 +39,13 @@ import {
   Section,
   SectionTitle,
   Summary,
+  textShadowOnDark,
 } from './ui';
 import Responsive from 'react-responsive';
 
+const Screen = props => <Responsive {...props} screen={true} />;
+const Print = props => <Responsive {...props} print={true} />;
 const Desktop = props => <Responsive {...props} minWidth={900} />;
-const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={959} />;
 const Mobile = props => <Responsive {...props} maxWidth={899} />;
 
 const Github = () => (
@@ -63,20 +65,20 @@ const Twitter = () => (
 );
 
 const Head = () => (
-    <Header>
-      <Desktop>
-        <Name>Franklin</Name>
-        <Name>Henderson</Name>
-      </Desktop>
-      <Mobile>
-        <Name>Franklin Henderson</Name>
-      </Mobile>
-      <Icons>
-        <Github />
-        <LinkedIn />
-        <Twitter />
-      </Icons>
-    </Header>
+  <Header>
+    <Desktop>
+      <Name>Franklin</Name>
+      <Name>Henderson</Name>
+    </Desktop>
+    <Mobile>
+      <Name>Franklin Henderson</Name>
+    </Mobile>
+    <Icons>
+      <Github />
+      <LinkedIn />
+      <Twitter />
+    </Icons>
+  </Header>
 );
 
 const ContactSection = () => (
@@ -90,7 +92,7 @@ const ContactSection = () => (
         <a href="http://resume.fhwrdh.net">resume.fhwrdh.net</a>
       </Bullet>
       <Bullet icon={FilePdfIcon}>
-        <a href="http://resume.fhwrdh.net/franklin.henderson.pdf">
+        <a href="/franklin.henderson.pdf">
           franklin.henderson.pdf
         </a>
       </Bullet>
@@ -182,40 +184,74 @@ const ExperienceSection = () => (
 );
 
 const MobileContainer = styled.div`
-  margin: 1em;
+  margin: 0;
+  padding: 0;
 `;
+
+const WithBackground = styled.div`
+  @media screen {
+    padding: 1em;
+    background-color: #304655;
+    color: #ddd;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    & h2 {
+      ${textShadowOnDark};
+    }
+  }
+`;
+const WithoutBackground = styled.div`
+  @media screen {
+    padding: 1em;
+  }
+`;
+
+const DesktopLayout = () => (
+  <Container>
+    <Left>
+      <Head />
+      <ContactSection />
+      <SkillsSection />
+      <UserGroupsSection />
+      <EducationSection />
+      <InterestsSection />
+    </Left>
+    <Right>
+      <AboutMeSection />
+      <ExperienceSection />
+    </Right>
+  </Container>
+);
 
 export default () => {
   return (
     <React.Fragment>
-      <Desktop>
-        <Container>
-          <Left>
-            <Head />
-            <ContactSection />
-            <SkillsSection />
-            <UserGroupsSection />
-            <EducationSection />
-            <InterestsSection />
-          </Left>
-          <Right>
-            <AboutMeSection />
-            <ExperienceSection />
-          </Right>
-        </Container>
-      </Desktop>
-      <Mobile>
-        <MobileContainer>
-          <Head />
-          <ContactSection />
-          <AboutMeSection />
-          <ExperienceSection />
-          <SkillsSection />
-          <UserGroupsSection />
-          <EducationSection />
-          <InterestsSection />
-        </MobileContainer>
-      </Mobile>
+      <Print>
+        <DesktopLayout />
+      </Print>
+      <Screen>
+        <Desktop>
+          <DesktopLayout />
+        </Desktop>
+        <Mobile>
+          <MobileContainer>
+            <WithBackground>
+              <Head />
+              <ContactSection />
+            </WithBackground>
+            <WithoutBackground>
+              <AboutMeSection />
+              <ExperienceSection />
+            </WithoutBackground>
+            <WithBackground>
+              <SkillsSection />
+              <UserGroupsSection />
+              <EducationSection />
+              <InterestsSection />
+            </WithBackground>
+          </MobileContainer>
+        </Mobile>
+      </Screen>
     </React.Fragment>
   );
 };
