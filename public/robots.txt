@@ -1,0 +1,5 @@
+# robotstxt.org/
+
+# robots go away, for now
+User-agent: *
+Disallow: /
