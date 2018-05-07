@@ -160,14 +160,10 @@ const AboutMeSection = () => (
     <SectionTitle>About Me</SectionTitle>
     <Summary>
       <Point>
-        Software professional with more than 20 years of experience building
-        scalable, testable, maintainable systems across multiple technology
-        platforms.
+        A software professional with more than 20 years of experience building scalable, testable, maintainable systems across multiple technology platforms.
       </Point>
       <Point>
-        Proven history of leadership, both formally as a development manager and
-        informally mentoring developers and organizations on agile practices,
-        test-driven development, front end technology.
+        A proven history of leadership, both formally as a development manager and informally mentoring developers and organizations on agile practices, test-driven development, front end technology.
       </Point>
       <Point>
         Strong agile project management, analysis and presentation skills.
