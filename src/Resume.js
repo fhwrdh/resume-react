@@ -73,11 +73,13 @@ const Head = () => (
     <Mobile>
       <Name>Franklin Henderson</Name>
     </Mobile>
-    <Icons>
-      <Github />
-      <LinkedIn />
-      <Twitter />
-    </Icons>
+    <Screen>
+      <Icons>
+        <Github />
+        <LinkedIn />
+        <Twitter />
+      </Icons>
+    </Screen>
   </Header>
 );
 
@@ -92,10 +94,19 @@ const ContactSection = () => (
         <a href="http://resume.fhwrdh.net">resume.fhwrdh.net</a>
       </Bullet>
       <Bullet icon={FilePdfIcon}>
-        <a href="/franklin.henderson.pdf">
-          franklin.henderson.pdf
-        </a>
+        <a href="/franklin.henderson.pdf">franklin.henderson.pdf</a>
       </Bullet>
+      <Print>
+        <Bullet icon={GithubCircleIcon}>
+          <a href="https://www.github.com/fhwrdh">github.com/fhwrdh</a>
+        </Bullet>
+        <Bullet icon={LinkedinBoxIcon}>
+          <a href="https://www.linkedin.com/in/fhwrdh">linkedin.com/in/fhwrdh</a>
+        </Bullet>
+        <Bullet icon={TwitterIcon}>
+          <a href="https://www.twitter.com/fhwrdh">twitter.com/fhwrdh</a>
+        </Bullet>
+      </Print>
     </Description>
   </Section>
 );
@@ -110,7 +121,7 @@ const SkillsSection = () => (
       <Bullet icon={LanguageCss3Icon}>HTML, CSS</Bullet>
       <Bullet icon={WebpackIcon}>Webpack, Gulp, Jest, etc.</Bullet>
       <Bullet icon={NpmIcon}>npm, GitHub, GitLab</Bullet>
-      <Bullet icon={CodeBracesIcon}>JVM, Java</Bullet>
+      <Bullet icon={CodeBracesIcon}>JVM, Java, Scala</Bullet>
       <Bullet icon={LanguageCsharpIcon}>.Net, C#</Bullet>
       <Bullet icon={DatabaseIcon}>SQL, NoSQL</Bullet>
       <Bullet icon={HexagonMultipleIcon}>XP, TDD, Pairing</Bullet>
@@ -219,6 +230,25 @@ const DesktopLayout = () => (
   </Container>
 );
 
+const MobileLayout = () => (
+  <MobileContainer>
+    <WithBackground>
+      <Head />
+      <ContactSection />
+    </WithBackground>
+    <WithoutBackground>
+      <AboutMeSection />
+      <ExperienceSection />
+    </WithoutBackground>
+    <WithBackground>
+      <SkillsSection />
+      <UserGroupsSection />
+      <EducationSection />
+      <InterestsSection />
+    </WithBackground>
+  </MobileContainer>
+);
+
 export default () => {
   return (
     <React.Fragment>
@@ -230,22 +260,7 @@ export default () => {
           <DesktopLayout />
         </Desktop>
         <Mobile>
-          <MobileContainer>
-            <WithBackground>
-              <Head />
-              <ContactSection />
-            </WithBackground>
-            <WithoutBackground>
-              <AboutMeSection />
-              <ExperienceSection />
-            </WithoutBackground>
-            <WithBackground>
-              <SkillsSection />
-              <UserGroupsSection />
-              <EducationSection />
-              <InterestsSection />
-            </WithBackground>
-          </MobileContainer>
+          <MobileLayout />
         </Mobile>
       </Screen>
     </React.Fragment>
