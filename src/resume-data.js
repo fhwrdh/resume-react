@@ -53,7 +53,8 @@ export default {
         end: 'Jan 2014',
       },
       description: [
-        `Hired to build a next generation display advertising system. Designed, coded, tested an application that implemented complex rulesets across multiple advertising networks, user attributes and geographic configurations.  Implemented data migration tools to ETL ad server data into a reporting-friendly schema and an internal-facing, web-based application providing near-realtime KPIs, impression statistics, CPMs, revenue.  Node.js, CoffeeScript, MongoDB, Mocha, PostgreSql, MySql, AWS.`,
+        `Hired to build a next generation display advertising system. Designed, coded, tested an application that implemented complex rulesets across multiple advertising networks, user attributes and geographic configurations.  `,
+        `Implemented data migration tools to ETL ad server data into a reporting-friendly schema and an internal-facing, web-based application providing near-realtime KPIs, impression statistics, CPMs, revenue.  Node.js, CoffeeScript, MongoDB, Mocha, PostgreSql, MySql, AWS.`,
       ],
     },
 
@@ -113,7 +114,7 @@ export default {
         end: 'Mar 2005',
       },
       description: [
-        `Iniital Business Systems team member. Developed features for Customer Account Management application.  Java, ATG Dynamo, Oracle.`,
+        `Initial Business Systems team member. Developed features for Customer Account Management application.  Java, ATG Dynamo, Oracle.`,
         `Rewrote UNIX shell / Perl batch nightly jobs to populate data warehouse, adding error handling, logging, automation. Bash, Perl.`,
         `Developed rules-based royalty and commission calculator.`,
       ],
