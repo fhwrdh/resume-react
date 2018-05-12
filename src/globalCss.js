@@ -9,6 +9,9 @@ injectGlobal`
       background-color: #FCFCFC;
       color: #333;
     }
+    @media print {
+      font-size: 13px;
+    }
   }
   html, body, #root {
     height: 100%;

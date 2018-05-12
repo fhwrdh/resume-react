@@ -168,7 +168,7 @@ const InterestsSection = () => (
 
 const AboutMeSection = () => (
   <Section>
-    <SectionTitle>About Me</SectionTitle>
+    <SectionTitle top>About Me</SectionTitle>
     <Summary>
       <Point>
         A software professional with more than 20 years of experience building scalable, testable, maintainable systems across multiple technology platforms with a focus on UI/UX, testing, teaching, learning.

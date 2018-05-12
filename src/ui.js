@@ -18,8 +18,8 @@ export const Container = styled.div`
 `;
 
 export const Left = styled.div`
-  min-width: 240px;
-  font-size: .9em;
+  min-width: 235px;
+  font-size: 0.9em;
   padding: 1.5em;
   @media screen {
     border-right: 5px solid black;
@@ -31,8 +31,8 @@ export const Left = styled.div`
   }
   @media print {
     padding-left: 0;
-    min-width: 175px;
-    font-size: .7em;
+    min-width: 160px;
+    font-size: 0.8em;
   }
 `;
 
@@ -63,6 +63,7 @@ export const Section = styled.div`
   margin-bottom: 1.5em;
 `;
 export const SectionTitle = styled.h2`
+  ${({top}) => top === true && 'margin-top: 0;'};
   ${titleFont};
   margin-bottom: 0.5em;
   font-size: 1.7em;
@@ -107,7 +108,7 @@ export const Bullet = ({icon, children}) => {
 };
 
 export const Icons = styled.div`
-  margin-top: 0.2em;
+  margin-top: 0.4em;
   & > * {
     margin-right: 0.3em;
   }
@@ -122,20 +123,28 @@ export const Company = styled.div`
   margin-top: 1em;
 `;
 
+export const TitleLine = styled.div`
+  margin: 0.5em 0 0.2em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0px solid black;
+`;
 export const Title = styled.h3`
-  margin-bottom: 0;
+  margin: 0;
 `;
 export const CompanyName = styled.h4`
-  margin: 0.3em 0;
+  margin: 0;
 `;
-
 export const Details = styled.h5`
+  font-weight: initial;
   margin: 0;
   display: flex;
+  justify-content: flex-end;
   font-style: italic;
 `;
 export const Tenure = styled.div`
-  margin-right: 1em;
+  margin-right: .5em;
 `;
 export const Location = styled.div``;
 
