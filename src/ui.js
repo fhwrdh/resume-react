@@ -18,7 +18,8 @@ export const Container = styled.div`
 `;
 
 export const Left = styled.div`
-  min-width: 250px;
+  min-width: 240px;
+  font-size: .9em;
   padding: 1.5em;
   @media screen {
     border-right: 5px solid black;
@@ -30,6 +31,8 @@ export const Left = styled.div`
   }
   @media print {
     padding-left: 0;
+    min-width: 175px;
+    font-size: .7em;
   }
 `;
 
@@ -77,7 +80,7 @@ export const Summary = styled(Description)``;
 
 export const BulletLi = styled.li`
   margin-bottom: 1em;
-  line-height: 1.8em;
+  line-height: 1.9em;
 `;
 
 export const BulletContent = styled.div`
@@ -140,5 +143,8 @@ export const Point = styled.li`
   font-size: 0.9em;
   margin-bottom: 1em;
   line-height: 1.5em;
-  color: #888;
+  color: #585858;
+  @media print {
+    color: #333;
+  }
 `;
