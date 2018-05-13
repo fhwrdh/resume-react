@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled, {css} from 'styled-components';
 import {ChevronRightIcon} from 'mdi-react';
 
@@ -121,6 +121,9 @@ export const Company = styled.div`
     border-bottom: ${border};
   }
   margin-top: 1em;
+  @media print {
+    ${({breakAfter}) => breakAfter && 'page-break-after: always;'};
+  }
 `;
 
 export const TitleLine = styled.div`
@@ -144,11 +147,11 @@ export const Details = styled.h5`
   font-style: italic;
 `;
 export const Tenure = styled.div`
-  margin-right: .5em;
+  margin-right: 0.5em;
 `;
 export const Location = styled.div``;
 
-export const Point = styled.li`
+export const PointText = styled.li`
   font-size: 0.9em;
   margin-bottom: 1em;
   line-height: 1.5em;
@@ -157,3 +160,16 @@ export const Point = styled.li`
     color: #333;
   }
 `;
+
+const Role = styled.li`
+  font-size: 1.2em;
+  font-weight: 600;
+  font-variant: all-small-caps;
+`;
+
+export const Point = ({role, children}) => (
+  <Fragment>
+    {role && <Role>{role}</Role>}
+    <PointText>{children}</PointText>
+  </Fragment>
+);

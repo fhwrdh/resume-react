@@ -4,9 +4,9 @@ import {
 
 const Job = ({data}) => {
   if (data.live && data.live === 'off') return null;
-  const {companyName, title, tenure, location, description} = data;
+  const {breakAfter, companyName, title, tenure, location, description} = data;
   return (
-    <Company>
+    <Company breakAfter={breakAfter}>
         <Title>{title}</Title>
       <TitleLine>
         <CompanyName>{companyName}</CompanyName>
@@ -18,7 +18,7 @@ const Job = ({data}) => {
         </Details>
       </TitleLine>
       <Description>
-        {description.map((p, idx) => <Point key={idx}>{p}</Point>)}
+        {description.map((p, idx) => <Point key={idx} role={p.role}>{p.text}</Point>)}
       </Description>
     </Company>
   );
