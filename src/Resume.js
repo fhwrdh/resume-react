@@ -171,13 +171,10 @@ const AboutMeSection = () => (
     <SectionTitle top>About Me</SectionTitle>
     <Summary>
       <Point>
-        A software professional with more than 20 years of experience building scalable, testable, maintainable systems across multiple technology platforms with a focus on UI/UX, testing, teaching, learning.
+        A software professional with more than twenty years of experience building scalable, testable, maintainable systems across multiple technology platforms with a focus on UI/UX, testing, teaching, learning.
       </Point>
       <Point>
-        A proven history of leadership, both formally as an engineering manager / team lead / department leader and informally mentoring developers, other leaders and organizations on empathy, agile practices, test-driven development, front-end technology and user experience.
-      </Point>
-      <Point>
-        Strong agile project management, analysis and presentation skills.
+        A proven history of leadership, both formally as an engineering manager / team lead / department leader and informally mentoring developers, other leaders and organizations on agile practices, test-driven development, project management, front-end technology, empathy, and user experience.
       </Point>
     </Summary>
   </Section>
