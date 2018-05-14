@@ -78,14 +78,13 @@ export default {
       },
       description: [
         {
-          text: `Hired to built a next generation display advertising system. Designed, coded, tested an application that implemented complex rulesets across multiple advertising networks, user attributes and geographic configurations.`,
+          text: `Hired to build a next generation display advertising system. Designed, coded, tested an application that implemented complex rulesets across multiple advertising networks, user attributes and geographic configurations.`,
         },
         {
           text: `Implemented data migration tools to ETL ad server data into a reporting-friendly schema and an internal-facing, web-based application providing near-realtime KPIs, impression statistics, CPMs, revenue. Node.js, CoffeeScript, MongoDB, Mocha, PostgreSql, MySql, AWS.`,
         },
       ],
     },
-
     {
       companyName: 'TrueCar',
       location: 'Santa Monica, Ca',
@@ -138,7 +137,7 @@ export default {
       },
       description: [
         {
-          text: `Built web-based customer service / business process application. Integrated with core game engine and multiple datasources and web services to support customer service, cashier, marketing/promotions, affiliate management, operations, fraud and game security. Initiated Domain Driven Design-based re-architecture of the application in response to the evolving enterprise architecture and business requirements. .NET, C#, WCF, MSSQL.`,
+          text: `Built web-based customer service / business process application. Integrated with core game engine and multiple data sources and web services to support customer service, cashier, marketing/promotions, affiliate management, operations, fraud and game security. Initiated Domain Driven Design-based re-architecture of the application in response to the evolving enterprise architecture and business requirements. .NET, C#, WCF, MSSQL.`,
         },
         {
           text: `Initiated agile transformation within the IT organization. Hired the company's first ScrumMaster. Team success led to Scrum adoption across the company.`,
