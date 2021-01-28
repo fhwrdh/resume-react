@@ -23,7 +23,7 @@ const Close = styled.div``;
 export default () => (
   <Letter>
     <ContactInfo>
-      <li>Franklin Henderson</li>
+      <li>Aaron Zeisler</li>
       <li>California, USA</li>
       <li>work@fhwrdh.net</li>
     </ContactInfo>
@@ -41,8 +41,8 @@ export default () => (
     </WhyTheyLikeMe>
     <Close>
       <div>Kind regards,</div>
-      <div>Franklin Henderson</div>
-      <div>work@fhwrdh.net</div>
+      <div>Aaron Zeisler</div>
+      <div>waaron.zeisler@gmail.com</div>
     </Close>
   </Letter>
 );

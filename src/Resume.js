@@ -71,7 +71,7 @@ const Desktop = props => <Responsive {...props} minWidth={900} />;
 const Mobile = props => <Responsive {...props} maxWidth={899} />;
 
 const Github = () => (
-  <a href="http://www.github.com/fhwrdh">
+  <a href="http://www.github.com/aaron-zeisler">
     <GithubCircleIcon />
   </a>
 );
@@ -131,10 +131,10 @@ const SkillsSection = () => (
       <Bullet icon={CodeBracesIcon}>Golang, Python</Bullet>
       <Bullet icon={LanguageJavascriptIcon}>Javascript, Angular</Bullet>
       <Bullet icon={MicrosoftIcon}>ASP.NET, C#</Bullet>
-      <Bullet icon={DatabaseIcon}>MySQL, MS SQL Server</Bullet>
-      <Bullet icon={GoogleCirclesExtendedIcon}>REST APIs, Microservices</Bullet>
+      <Bullet icon={DatabaseIcon}>MySQL, Postgres, Redis</Bullet>
+      <Bullet icon={GoogleCirclesExtendedIcon}>Microservices, REST, gRPC</Bullet>
       <Bullet icon={CloudBracesIcon}>EC2, S3, SNS, SQS, SES</Bullet>
-      <Bullet icon={HexagonMultipleIcon}>Redis, Kafka, Kinesis</Bullet>
+      <Bullet icon={HexagonMultipleIcon}>Kafka, RabbitMQ</Bullet>
       <Bullet icon={ConsoleLineIcon}>Linux, Docker</Bullet>
       <Bullet icon={SourceBranchIcon}>GitHub, Bitbucket, Mercurial</Bullet>
       <Bullet icon={TruckDeliveryIcon}>Continuous Integration</Bullet>
@@ -171,7 +171,7 @@ const AboutMeSection = () => (
     <SectionTitle top>About Me</SectionTitle>
     <Summary>
       <Point>
-        A software engineer with more than fifteen years of experience.  In my career I have worked in the healthcare, education, gaming, and financial services industries.  I specialize in building data-intensive applications and services that are scalable, testable, and maintainable.
+        A software engineer with more than fifteen years of experience.  In my career I have worked in the healthcare, education, gaming, fashion, and financial services industries.  I specialize in building data-intensive applications and services that are scalable, testable, and maintainable.
       </Point>
       <Point>
         I'm looking for a position where I'm constantly being challenged and trying new things.  I'd love to be at a company that has a strong culture of technical innovation, learning, and teaching.  I'm currently excited about serverless applications and event-driven systems.  I find a zen-like peace in code refactoring.
