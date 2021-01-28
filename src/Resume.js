@@ -3,23 +3,45 @@ import styled from 'styled-components';
 import {
   AccountMultipleIcon,
   AirplaneTakeoffIcon,
+  SourceMergeIcon,
   CameraIcon,
+  CardsIcon,
+  CloudBracesIcon,
   CodeBracesIcon,
+  ConsoleLineIcon,
   CubeUnfoldedIcon,
   DatabaseIcon,
+  Dice5Icon,
   EmailIcon,
+  EmoticonIcon,
+  InsertEmoticonIcon,
   FilePdfIcon,
   GithubCircleIcon,
+  GoogleCirclesExtendedIcon,
   HeadphonesIcon,
   HexagonMultipleIcon,
+  HomeHeartIcon,
   HopsIcon,
   HumanHandsupIcon,
   LanguageCsharpIcon,
   LanguageCss3Icon,
+  LanguageGoIcon,
   LanguageJavascriptIcon,
+  LanguagePythonIcon,
+  LightbulbOnIcon,
   LinkedinBoxIcon,
+  MicrosoftIcon,
   NpmIcon,
+  PackageVariantIcon,
+  BoatIcon,
+  PhoneIcon,
+  ShipIcon,
+  ShipWheelIcon,
+  SailingIcon,
+  SourceBranchIcon,
   SchoolIcon,
+  TruckFastIcon,
+  TruckDeliveryIcon,
   TwitterIcon,
   WebIcon,
   WebpackIcon,
@@ -54,7 +76,7 @@ const Github = () => (
   </a>
 );
 const LinkedIn = () => (
-  <a href="https://www.linkedin.com/in/franklinhenderson/">
+  <a href="https://www.linkedin.com/in/aaron-zeisler/">
     <LinkedinBoxIcon />
   </a>
 );
@@ -67,17 +89,15 @@ const Twitter = () => (
 const Head = () => (
   <Header>
     <Desktop>
-      <Name>Franklin</Name>
-      <Name>Henderson</Name>
+      <Name>Aaron Zeisler</Name>
     </Desktop>
     <Mobile>
-      <Name>Franklin Henderson</Name>
+      <Name>Aaron Zeisler</Name>
     </Mobile>
     <Screen>
       <Icons>
         <Github />
         <LinkedIn />
-        <Twitter />
       </Icons>
     </Screen>
   </Header>
@@ -88,23 +108,16 @@ const ContactSection = () => (
     <SectionTitle>Contact</SectionTitle>
     <Description tight>
       <Bullet icon={EmailIcon}>
-        <a href="mailto:work@fhwrdh.net">work@fhwrdh.net</a>
+        <a href="mailto:aaron.zeisler@gmail.com">aaron.zeisler@gmail.com</a>
       </Bullet>
-      <Bullet icon={WebIcon}>
-        <a href="http://resume.fhwrdh.net">resume.fhwrdh.net</a>
-      </Bullet>
-      <Bullet icon={FilePdfIcon}>
-        <a href="/franklin.henderson.pdf">franklin.henderson.pdf</a>
-      </Bullet>
+      <Screen>
+        <Bullet icon={FilePdfIcon}>
+          <a href="/aaron.zeisler.pdf">aaron.zeisler.pdf</a>
+        </Bullet>
+      </Screen>
       <Print>
-        <Bullet icon={GithubCircleIcon}>
-          <a href="https://www.github.com/fhwrdh">github.com/fhwrdh</a>
-        </Bullet>
         <Bullet icon={LinkedinBoxIcon}>
-          <a href="https://www.linkedin.com/in/fhwrdh">linkedin.com/in/fhwrdh</a>
-        </Bullet>
-        <Bullet icon={TwitterIcon}>
-          <a href="https://www.twitter.com/fhwrdh">twitter.com/fhwrdh</a>
+          <a href="https://www.linkedin.com/in/aaron-zeisler">linkedin.com/in/aaron-zeisler</a>
         </Bullet>
       </Print>
     </Description>
@@ -115,30 +128,18 @@ const SkillsSection = () => (
   <Section>
     <SectionTitle>Skills</SectionTitle>
     <Description tight>
-      <Bullet tight icon={LanguageJavascriptIcon}>
-        JavaScript, React, Node
-      </Bullet>
-      <Bullet icon={LanguageCss3Icon}>HTML, CSS</Bullet>
-      <Bullet icon={WebpackIcon}>Webpack, Gulp, Jest, etc.</Bullet>
-      <Bullet icon={NpmIcon}>npm, GitHub, GitLab</Bullet>
-      <Bullet icon={CodeBracesIcon}>JVM, Java, Scala</Bullet>
-      <Bullet icon={LanguageCsharpIcon}>.Net, C#</Bullet>
-      <Bullet icon={DatabaseIcon}>SQL, NoSQL</Bullet>
-      <Bullet icon={HexagonMultipleIcon}>XP, TDD, Pairing</Bullet>
+      <Bullet icon={CodeBracesIcon}>Golang, Python</Bullet>
+      <Bullet icon={LanguageJavascriptIcon}>Javascript, Angular</Bullet>
+      <Bullet icon={MicrosoftIcon}>ASP.NET, C#</Bullet>
+      <Bullet icon={DatabaseIcon}>MySQL, MS SQL Server</Bullet>
+      <Bullet icon={GoogleCirclesExtendedIcon}>REST APIs, Microservices</Bullet>
+      <Bullet icon={CloudBracesIcon}>EC2, S3, SNS, SQS, SES</Bullet>
+      <Bullet icon={HexagonMultipleIcon}>Redis, Kafka, Kinesis</Bullet>
+      <Bullet icon={ConsoleLineIcon}>Linux, Docker</Bullet>
+      <Bullet icon={SourceBranchIcon}>GitHub, Bitbucket, Mercurial</Bullet>
+      <Bullet icon={TruckDeliveryIcon}>Continuous Integration</Bullet>
+      <Bullet icon={LightbulbOnIcon}>Pair Programming, TDD</Bullet>
       <Bullet icon={CubeUnfoldedIcon}>Agile, Kanban, Scrum</Bullet>
-      <Bullet icon={HumanHandsupIcon}>Leadership, Mentoring</Bullet>
-    </Description>
-  </Section>
-);
-
-const UserGroupsSection = () => (
-  <Section>
-    <SectionTitle>User Groups</SectionTitle>
-    <Description tight>
-      <Bullet icon={AccountMultipleIcon}>WLVJS Co-Organizer, Current</Bullet>
-      <Bullet icon={AccountMultipleIcon}>Lunch.js Champion, Current</Bullet>
-      <Bullet icon={AccountMultipleIcon}>JS.LA, Current</Bullet>
-      <Bullet icon={AccountMultipleIcon}>ALT.NET, Dublin, 2009-2011</Bullet>
     </Description>
   </Section>
 );
@@ -147,9 +148,8 @@ const EducationSection = () => (
   <Section>
     <SectionTitle>Education</SectionTitle>
     <Description tight>
-      <Bullet icon={SchoolIcon}>CSUN, Math</Bullet>
-      <Bullet icon={SchoolIcon}>Santa Monica College, CS</Bullet>
-      <Bullet icon={SchoolIcon}>College of Marin, CS</Bullet>
+      <Bullet icon={SchoolIcon}>Bowling Green State Univ.</Bullet>
+      <Bullet tight>BS, Computer Science</Bullet>
     </Description>
   </Section>
 );
@@ -159,9 +159,9 @@ const InterestsSection = () => (
     <SectionTitle>Interests</SectionTitle>
     <Description tight>
       <Bullet icon={HopsIcon}>Brewing</Bullet>
-      <Bullet icon={CameraIcon}>Photography</Bullet>
-      <Bullet icon={AirplaneTakeoffIcon}>Travel</Bullet>
+      <Bullet icon={Dice5Icon}>Board Games</Bullet>
       <Bullet icon={HeadphonesIcon}>Music</Bullet>
+      <Bullet icon={HomeHeartIcon}>Dad Stuff</Bullet>
     </Description>
   </Section>
 );
@@ -171,10 +171,10 @@ const AboutMeSection = () => (
     <SectionTitle top>About Me</SectionTitle>
     <Summary>
       <Point>
-        A software professional with more than twenty years of experience building scalable, testable, maintainable systems across multiple technology platforms with a focus on UI/UX, testing, teaching, learning.
+        A software engineer with more than fifteen years of experience.  In my career I have worked in the healthcare, education, gaming, and financial services industries.  I specialize in building data-intensive applications and services that are scalable, testable, and maintainable.
       </Point>
       <Point>
-        A proven history of leadership, both formally as an engineering manager / team lead / department leader and informally mentoring developers, other leaders and organizations on agile practices, test-driven development, project management, front-end technology, empathy, and user experience.
+        I'm looking for a position where I'm constantly being challenged and trying new things.  I'd love to be at a company that has a strong culture of technical innovation, learning, and teaching.  I'm currently excited about serverless applications and event-driven systems.  I find a zen-like peace in code refactoring.
       </Point>
     </Summary>
   </Section>
@@ -216,7 +216,6 @@ const DesktopLayout = () => (
       <Head />
       <ContactSection />
       <SkillsSection />
-      <UserGroupsSection />
       <EducationSection />
       <InterestsSection />
     </Left>
@@ -239,7 +238,6 @@ const MobileLayout = () => (
     </WithoutBackground>
     <WithBackground>
       <SkillsSection />
-      <UserGroupsSection />
       <EducationSection />
       <InterestsSection />
     </WithBackground>
