@@ -42,7 +42,7 @@ export default () => (
     <Close>
       <div>Kind regards,</div>
       <div>Aaron Zeisler</div>
-      <div>waaron.zeisler@gmail.com</div>
+      <div>aaron.zeisler@gmail.com</div>
     </Close>
   </Letter>
 );
