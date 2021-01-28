@@ -136,7 +136,7 @@ export const TitleLine = styled.div`
 export const Title = styled.h3`
   margin: 0;
 `;
-export const CompanyName = styled.h4`
+export const CompanyName = styled.h3`
   margin: 0;
 `;
 export const Details = styled.h5`
