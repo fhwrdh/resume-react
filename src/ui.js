@@ -167,9 +167,16 @@ const Role = styled.li`
   font-variant: all-small-caps;
 `;
 
-export const Point = ({role, children}) => (
+const Project = styled.li`
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 0.3em;
+`;
+
+export const Point = ({role, project, children}) => (
   <Fragment>
     {role && <Role>{role}</Role>}
+    {project && <Project>{project}</Project>}
     <PointText>{children}</PointText>
   </Fragment>
 );

@@ -1,12 +1,51 @@
 export default {
   experience: [
     {
+      companyName: 'Samsara',
+      location: 'San Francisco Bay Area, CA (Remote)',
+      //title: 'Senior Software Engineer',
+      tenure: {
+        start: 'Mar 2021',
+        end: 'Sept 2025',
+      },
+      description: [
+        {
+          role: 'Senior Software Engineer - Competitions Product',
+          text: `Primary tech lead on a new gamification product that allows Samsara’s customers to run competitions among their drivers, based on any of the metrics that are tracked by Samsara’s products. Responsible for system design, requirements gathering, scoping and planning, and leading engineers (as well as writing code).`,
+        },
+        {
+          text: `Used AI tools such as Cursor and Glean to enhance every phase of the software development lifecycle.`,
+        },
+        {
+          role: 'Senior Software Engineer - Custom Reports Platform',
+          text: `Tech lead on a multi-quarter project to develop a custom reporting framework. This product enables customers to pick and choose different pieces of data from across Samsara’s domains, and consolidate that data into a single, understandable, performant report. Lead engineer on key features such as visualizations (charts), the query compiler, time-based grouping, and the service responsible for serving processed data to the frontend.`,
+        },
+        {
+          text: `This project was a career highlight due to the product’s incredible scope, complexity, teammates, and customer impact.`,
+        },
+        {
+          role: 'Senior Software Engineer - Media Services',
+          text: `Tech lead and engineer on services that ingest, process, and serve videos and images. Maintained legacy architecture while designing and developing the next-generation services.`,
+        },
+        {
+          role: 'Senior Software Engineer - Telematics Platform',
+          project: 'Trips Service',
+          text: `Maintained and enhanced a service that transformed raw vehicle metrics into periods of activity called “trips”. This is a critical building block of Samsara’s domain that all other product teams build logic on top of. This service operates at scale: the read path serves 50,000+ requests per second at the daily peak.`,
+        },
+        {
+          project: 'Driver Assignment Service',
+          text: `Primary tech lead and engineer on this new service that consolidated Samsara’s 11 different methods of assigning a driver to a vehicle into an easily-queryable service and data store. When we released this service, it immediately served 30,000+ requests per second, and supported some of Samsara’s most critical real-time logic.`,
+        },
+      ],
+      breakAfter: true,
+    },
+    {
       companyName: 'Stitch Fix',
       location: 'San Francisco Bay Area, CA (Remote)',
       //title: 'Senior Software Engineer',
       tenure: {
         start: 'Mar 2020',
-        end: 'present',
+        end: 'Mar 2021',
       },
       description: [
         {
@@ -58,7 +97,6 @@ export default {
           text: `Enhanced and maintained LifeMasters’ enterprise applications, including a C++ call center application used by over 1000 health professionals (doctors & nurses), a web application used by LifeMasters’ clients (insurance companies), and a web portal used by LifeMasters’ 1 million participants (patients).`,
         },
       ],
-      breakAfter: true,
     },
     {
       companyName: 'TechniEdge Financial Integration (TFI), Inc.',
@@ -74,6 +112,7 @@ export default {
           text: `Worked in a small development team with a start-up feel to provide custom applications and solutions.  Our niche was financial reporting and customer engagement tools for casinos.`,
         },
       ],
+      breakAfter: true,
     },
     {
       companyName: 'Medical College of Ohio',

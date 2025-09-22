@@ -18,7 +18,7 @@ const Job = ({data}) => {
         </Details>
       </TitleLine>
       <Description>
-        {description.map((p, idx) => <Point key={idx} role={p.role}>{p.text}</Point>)}
+        {description.map((p, idx) => <Point key={idx} role={p.role} project={p.project}>{p.text}</Point>)}
       </Description>
     </Company>
   );

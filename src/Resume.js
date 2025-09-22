@@ -18,6 +18,7 @@ import {
   FilePdfIcon,
   GithubCircleIcon,
   GoogleCirclesExtendedIcon,
+  GuitarElectricIcon,
   HeadphonesIcon,
   HexagonMultipleIcon,
   HomeHeartIcon,
@@ -128,13 +129,13 @@ const SkillsSection = () => (
   <Section>
     <SectionTitle>Skills</SectionTitle>
     <Description tight>
+      <Bullet icon={GoogleCirclesExtendedIcon}>Distributed Systems</Bullet>
       <Bullet icon={CodeBracesIcon}>Golang, Python</Bullet>
-      <Bullet icon={LanguageJavascriptIcon}>Javascript, Angular</Bullet>
-      <Bullet icon={MicrosoftIcon}>ASP.NET, C#</Bullet>
-      <Bullet icon={DatabaseIcon}>MySQL, Postgres, Redis</Bullet>
-      <Bullet icon={GoogleCirclesExtendedIcon}>Microservices, REST, gRPC</Bullet>
+      <Bullet icon={DatabaseIcon}>MySQL, DynamoDB, Redis</Bullet>
       <Bullet icon={CloudBracesIcon}>EC2, S3, SNS, SQS, SES</Bullet>
-      <Bullet icon={HexagonMultipleIcon}>Kafka, RabbitMQ</Bullet>
+      <Bullet icon={HexagonMultipleIcon}>Kafka, SNS, RabbitMQ</Bullet>
+      <Bullet icon={LanguageJavascriptIcon}>Javascript, React, Angular</Bullet>
+      <Bullet icon={MicrosoftIcon}>ASP.NET, C#</Bullet>
       <Bullet icon={ConsoleLineIcon}>Linux, Docker</Bullet>
       <Bullet icon={SourceBranchIcon}>GitHub, Bitbucket, Mercurial</Bullet>
       <Bullet icon={TruckDeliveryIcon}>Continuous Integration</Bullet>
@@ -158,8 +159,9 @@ const InterestsSection = () => (
   <Section>
     <SectionTitle>Interests</SectionTitle>
     <Description tight>
-      <Bullet icon={HopsIcon}>Brewing</Bullet>
+      <Bullet icon={GuitarElectricIcon}>Guitar</Bullet>
       <Bullet icon={Dice5Icon}>Board Games</Bullet>
+      <Bullet icon={HopsIcon}>Brewing</Bullet>
       <Bullet icon={HeadphonesIcon}>Music</Bullet>
       <Bullet icon={HomeHeartIcon}>Dad Stuff</Bullet>
     </Description>
@@ -171,12 +173,13 @@ const AboutMeSection = () => (
     <SectionTitle top>About Me</SectionTitle>
     <Summary>
       <Point>
-        A software engineer with more than fifteen years of experience.  In my career I have worked in the healthcare, education, gaming, fashion, and financial services industries.  I specialize in building data-intensive applications and services that are scalable, testable, and maintainable.
+        A software engineer with more than fifteen years of experience.  In my career I have worked in the healthcare, education, gaming, fashion, physical operations, and financial services industries.  I specialize in building data-intensive applications and services that are scalable, testable, and maintainable.
       </Point>
       <Point>
-        I'm looking for a position where I'm constantly being challenged and trying new things.  I'd love to be at a company that has a strong culture of technical innovation, learning, and teaching.  I'm currently excited about serverless applications and event-driven systems.  I find a zen-like peace in code refactoring.
+        I'm looking for a position where I'm constantly being challenged and trying new things.  I'd love to be at a company that has a strong culture of technical innovation, learning, and teaching.  I'm currently excited about distributed systems at scale, and using AI tools to enhance software development.  I find a zen-like peace in code refactoring.
       </Point>
     </Summary>
+    <div style={{borderBottom: '1px solid #ccc'}} />
   </Section>
 );
 
