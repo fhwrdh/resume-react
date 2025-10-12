@@ -112,7 +112,7 @@ export const Bullet = ({icon, children}) => {
 export const Icons = styled.div`
   margin-top: 0.4em;
   & > * {
-    margin-right: 0.3em;
+    margin-right: 0.4em;
   }
 `;
 

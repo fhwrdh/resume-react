@@ -4,12 +4,14 @@ import {
   AccountMultipleIcon,
   AirplaneTakeoffIcon,
   CameraIcon,
+  ChartLineIcon,
   CodeBracesIcon,
   CubeUnfoldedIcon,
   DatabaseIcon,
   EmailIcon,
   FilePdfIcon,
   GithubCircleIcon,
+  GraphqlIcon,
   HeadphonesIcon,
   HexagonMultipleIcon,
   HopsIcon,
@@ -19,9 +21,11 @@ import {
   LanguageCss3Icon,
   LanguageJavascriptIcon,
   LinkedinBoxIcon,
-  NpmIcon,
+  MapIcon,
+  NodejsIcon,
   RobotIcon,
   SchoolIcon,
+  StarIcon,
   WebIcon,
   WebpackIcon,
 } from 'mdi-react';
@@ -120,14 +124,14 @@ const SkillsSection = () => (
         JavaScript, TypeScript, React
       </Bullet>
       <Bullet icon={LanguageCss3Icon}>HTML, CSS</Bullet>
-      <Bullet icon={NpmIcon}>Node.js, npm, Vite</Bullet>
-      <Bullet icon={CodeBracesIcon}>Python, Go</Bullet>
-      <Bullet icon={HexagonMultipleIcon}>GraphQL, REST APIs</Bullet>
-      <Bullet icon={DatabaseIcon}>PostgreSQL, MySQL, NoSQL</Bullet>
-      <Bullet icon={CubeUnfoldedIcon}>AWS, Docker</Bullet>
-      <Bullet icon={WebpackIcon}>CI/CD, GitHub, GitLab</Bullet>
-      <Bullet icon={HexagonMultipleIcon}>TDD, Agile</Bullet>
+      <Bullet icon={NodejsIcon}>Node.js, npm, Vite</Bullet>
+      <Bullet icon={GraphqlIcon}>GraphQL, REST APIs</Bullet>
       <Bullet icon={RobotIcon}>Claude, Gemini, Copilot, MCP</Bullet>
+      <Bullet icon={CodeBracesIcon}>Python, Go</Bullet>
+      <Bullet icon={DatabaseIcon}>PostgreSQL, MySQL, NoSQL</Bullet>
+      <Bullet icon={HexagonMultipleIcon}>TDD, Agile</Bullet>
+      <Bullet icon={GithubCircleIcon}>GitHub, GitLab, CI/CD</Bullet>
+      <Bullet icon={CubeUnfoldedIcon}>AWS, Docker</Bullet>
     </Description>
   </Section>
 );
@@ -137,8 +141,11 @@ const LeadershipSection = () => (
     <SectionTitle>Leadership</SectionTitle>
     <Description tight>
       <Bullet icon={HumanHandsupIcon}>Team Building, Hiring</Bullet>
-      <Bullet icon={HumanHandsupIcon}>Mentoring</Bullet>
-      <Bullet icon={HumanHandsupIcon}>Strategic Planning</Bullet>
+      <Bullet icon={SchoolIcon}>Mentoring</Bullet>
+      <Bullet icon={ChartLineIcon}>Technical Strategy</Bullet>
+      <Bullet icon={MapIcon}>Roadmap Planning</Bullet>
+      <Bullet icon={AccountMultipleIcon}>Cross-functional Collaboration</Bullet>
+      <Bullet icon={StarIcon}>Performance Management</Bullet>
     </Description>
   </Section>
 );
@@ -169,7 +176,7 @@ const InterestsSection = () => (
   <Section>
     <SectionTitle>Interests</SectionTitle>
     <Description tight>
-      <Bullet icon={CameraIcon}>Photography</Bullet>
+      <Bullet icon={CameraIcon}>Film Photography</Bullet>
       <Bullet icon={AirplaneTakeoffIcon}>Travel</Bullet>
       <Bullet icon={HeadphonesIcon}>Music</Bullet>
       <Bullet icon={HopsIcon}>Brewing</Bullet>
