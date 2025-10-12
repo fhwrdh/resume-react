@@ -1,19 +1,23 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Generate DOCX using pandoc (simpler than docx library)
 async function generateDocx() {
   const outputDir = './dist';
   const mdPath = path.join(outputDir, 'franklin.henderson.md');
   const docxPath = path.join(outputDir, 'franklin.henderson.docx');
-  
+
   // Check if markdown file exists
   if (!fs.existsSync(mdPath)) {
     throw new Error('Markdown file not found. Run generateFormats.js first.');
   }
 
   // Use pandoc to convert MD to DOCX
-  const { exec } = require('child_process');
   
   return new Promise((resolve, reject) => {
     const command = `pandoc "${mdPath}" -o "${docxPath}" --reference-doc=/dev/null || echo "Pandoc not available, skipping DOCX generation"`;
@@ -34,9 +38,9 @@ async function generateDocx() {
   });
 }
 
-module.exports = { generateDocx };
+export { generateDocx };
 
 // Run if called directly
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   generateDocx().catch(console.error);
 }
