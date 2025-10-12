@@ -31,27 +31,11 @@ jobs:
         # Generate TXT, MD, JSON formats
         node scripts/generateFormats.js
 
-        # Install Puppeteer
+        # Install Puppeteer for PDF generation
         npm install puppeteer
 
-        # Generate PDF using Puppeteer (with --no-sandbox for CI)
-        node -e "
-        import('puppeteer').then(async (puppeteer) => {
-          const browser = await puppeteer.default.launch({
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
-          });
-          const page = await browser.newPage();
-          await page.goto('file://' + process.cwd() + '/dist/index.html', {waitUntil: 'networkidle0'});
-          await page.pdf({
-            path: './dist/franklin.henderson.pdf',
-            format: 'A4',
-            printBackground: true,
-            margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' }
-          });
-          await browser.close();
-          console.log('✅ Generated PDF format');
-        });
-        "
+        # Generate PDF using Puppeteer
+        node scripts/generatePdf.js
 
         # Try to generate DOCX (if pandoc available)
         sudo apt-get update && sudo apt-get install -y pandoc || echo "Pandoc installation failed"
