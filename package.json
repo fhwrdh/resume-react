@@ -4,11 +4,11 @@
   "private": true,
   "dependencies": {
     "mdi-react": "^3.3.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-responsive": "^4.1.0",
-    "react-scripts": "1.1.0",
-    "styled-components": "^3.0.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-responsive": "^9.0.2",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.3.11"
   },
   "scripts": {
     "deploy": "npm run build && cp -r build/* ~/webapps/fhwrdh_resume_react",
@@ -16,6 +16,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "publish":"./publish.sh"
+    "publish": "./publish.sh"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

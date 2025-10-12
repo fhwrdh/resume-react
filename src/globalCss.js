@@ -1,6 +1,6 @@
-import {injectGlobal} from 'styled-components';
+import {createGlobalStyle} from 'styled-components';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
@@ -33,3 +33,5 @@ injectGlobal`
     /* height: 1.5em; */
   }
 `;
+
+export default GlobalStyle;

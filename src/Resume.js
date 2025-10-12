@@ -14,13 +14,14 @@ import {
   HexagonMultipleIcon,
   HopsIcon,
   HumanHandsupIcon,
+  InstagramIcon,
   LanguageCsharpIcon,
   LanguageCss3Icon,
   LanguageJavascriptIcon,
   LinkedinBoxIcon,
   NpmIcon,
+  RobotIcon,
   SchoolIcon,
-  TwitterIcon,
   WebIcon,
   WebpackIcon,
 } from 'mdi-react';
@@ -58,9 +59,9 @@ const LinkedIn = () => (
     <LinkedinBoxIcon />
   </a>
 );
-const Twitter = () => (
-  <a href="https://www.twitter.com/fhwrdh/">
-    <TwitterIcon />
+const Instagram = () => (
+  <a href="https://www.instagram.com/fhwrdh/">
+    <InstagramIcon />
   </a>
 );
 
@@ -77,7 +78,7 @@ const Head = () => (
       <Icons>
         <Github />
         <LinkedIn />
-        <Twitter />
+        <Instagram />
       </Icons>
     </Screen>
   </Header>
@@ -101,10 +102,10 @@ const ContactSection = () => (
           <a href="https://www.github.com/fhwrdh">github.com/fhwrdh</a>
         </Bullet>
         <Bullet icon={LinkedinBoxIcon}>
-          <a href="https://www.linkedin.com/in/fhwrdh">linkedin.com/in/fhwrdh</a>
+          <a href="https://www.linkedin.com/in/franklinhenderson">linkedin.com/in/franklinhenderson</a>
         </Bullet>
-        <Bullet icon={TwitterIcon}>
-          <a href="https://www.twitter.com/fhwrdh">twitter.com/fhwrdh</a>
+        <Bullet icon={InstagramIcon}>
+          <a href="https://www.instagram.com/fhwrdh">instagram.com/fhwrdh</a>
         </Bullet>
       </Print>
     </Description>
@@ -116,29 +117,39 @@ const SkillsSection = () => (
     <SectionTitle>Skills</SectionTitle>
     <Description tight>
       <Bullet tight icon={LanguageJavascriptIcon}>
-        JavaScript, React, Node
+        JavaScript, TypeScript, React
       </Bullet>
       <Bullet icon={LanguageCss3Icon}>HTML, CSS</Bullet>
-      <Bullet icon={WebpackIcon}>Webpack, Gulp, Jest, etc.</Bullet>
-      <Bullet icon={NpmIcon}>npm, GitHub, GitLab</Bullet>
-      <Bullet icon={CodeBracesIcon}>JVM, Java, Scala</Bullet>
-      <Bullet icon={LanguageCsharpIcon}>.Net, C#</Bullet>
-      <Bullet icon={DatabaseIcon}>SQL, NoSQL</Bullet>
-      <Bullet icon={HexagonMultipleIcon}>XP, TDD, Pairing</Bullet>
-      <Bullet icon={CubeUnfoldedIcon}>Agile, Kanban, Scrum</Bullet>
-      <Bullet icon={HumanHandsupIcon}>Leadership, Mentoring</Bullet>
+      <Bullet icon={NpmIcon}>Node.js, npm, Vite</Bullet>
+      <Bullet icon={CodeBracesIcon}>Python, Go</Bullet>
+      <Bullet icon={HexagonMultipleIcon}>GraphQL, REST APIs</Bullet>
+      <Bullet icon={DatabaseIcon}>PostgreSQL, MySQL, NoSQL</Bullet>
+      <Bullet icon={CubeUnfoldedIcon}>AWS, Docker</Bullet>
+      <Bullet icon={WebpackIcon}>CI/CD, GitHub, GitLab</Bullet>
+      <Bullet icon={HexagonMultipleIcon}>TDD, Agile</Bullet>
+      <Bullet icon={RobotIcon}>Claude, Gemini, Copilot, MCP</Bullet>
+    </Description>
+  </Section>
+);
+
+const LeadershipSection = () => (
+  <Section>
+    <SectionTitle>Leadership</SectionTitle>
+    <Description tight>
+      <Bullet icon={HumanHandsupIcon}>Team Building, Hiring</Bullet>
+      <Bullet icon={HumanHandsupIcon}>Mentoring</Bullet>
+      <Bullet icon={HumanHandsupIcon}>Strategic Planning</Bullet>
     </Description>
   </Section>
 );
 
 const UserGroupsSection = () => (
   <Section>
-    <SectionTitle>User Groups</SectionTitle>
+    <SectionTitle>Community</SectionTitle>
     <Description tight>
-      <Bullet icon={AccountMultipleIcon}>WLVJS Co-Organizer, Current</Bullet>
-      <Bullet icon={AccountMultipleIcon}>Lunch.js Champion, Current</Bullet>
-      <Bullet icon={AccountMultipleIcon}>JS.LA, Current</Bullet>
-      <Bullet icon={AccountMultipleIcon}>ALT.NET, Dublin, 2009-2011</Bullet>
+      <Bullet icon={AccountMultipleIcon}>WLVJS Co-Organizer</Bullet>
+      <Bullet icon={AccountMultipleIcon}>Lunch.js Champion</Bullet>
+      <Bullet icon={AccountMultipleIcon}>JS.LA Member</Bullet>
     </Description>
   </Section>
 );
@@ -158,23 +169,22 @@ const InterestsSection = () => (
   <Section>
     <SectionTitle>Interests</SectionTitle>
     <Description tight>
-      <Bullet icon={HopsIcon}>Brewing</Bullet>
       <Bullet icon={CameraIcon}>Photography</Bullet>
       <Bullet icon={AirplaneTakeoffIcon}>Travel</Bullet>
       <Bullet icon={HeadphonesIcon}>Music</Bullet>
+      <Bullet icon={HopsIcon}>Brewing</Bullet>
     </Description>
   </Section>
 );
 
 const AboutMeSection = () => (
   <Section>
-    <SectionTitle top>About Me</SectionTitle>
     <Summary>
       <Point>
-        A software professional with more than twenty years of experience building scalable, testable, maintainable systems across multiple technology platforms with a focus on UI/UX, testing, teaching, learning.
+        Principal Engineer with 20+ years building and scaling software systems across fintech, gaming, and advertising technology. Currently leading frontend architecture and team development at Tilia, where I build React/GraphQL interfaces to a system that processes millions in virtual economy transactions.
       </Point>
       <Point>
-        A proven history of leadership, both formally as an engineering manager / team lead / department leader and informally mentoring developers, other leaders and organizations on agile practices, test-driven development, project management, front-end technology, empathy, and user experience.
+        Combine deep technical expertise in modern frontend technologies with proven leadership experience, having grown engineering teams from solo contributors to high-performing units. Passionate about maintainable architecture, test-driven development, and mentoring engineers while maintaining hands-on contribution to complex technical challenges. Value close collaboration with users and stakeholders to build tools that truly serve their needs.
       </Point>
     </Summary>
   </Section>
@@ -216,8 +226,8 @@ const DesktopLayout = () => (
       <Head />
       <ContactSection />
       <SkillsSection />
+      <LeadershipSection />
       <UserGroupsSection />
-      <EducationSection />
       <InterestsSection />
     </Left>
     <Right>
@@ -239,8 +249,8 @@ const MobileLayout = () => (
     </WithoutBackground>
     <WithBackground>
       <SkillsSection />
+      <LeadershipSection />
       <UserGroupsSection />
-      <EducationSection />
       <InterestsSection />
     </WithBackground>
   </MobileContainer>

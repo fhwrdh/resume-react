@@ -15,6 +15,7 @@ export const titleFont = css`
 export const Container = styled.div`
   display: flex;
   margin: 0;
+  max-width: 1200px;
 `;
 
 export const Left = styled.div`
@@ -22,7 +23,7 @@ export const Left = styled.div`
   font-size: 0.9em;
   padding: 1.5em;
   @media screen {
-    border-right: 5px solid black;
+    border-right: 2px solid black;
     background-color: #304655;
     color: #eee;
     & h2 {
@@ -41,6 +42,7 @@ export const Right = styled.div`
   border-left: ${border};
   min-width: 500px;
   flex-grow: 2;
+  font-size: 1.1em;
   @media print {
     padding-right: 0;
   }
