@@ -26,6 +26,25 @@ jobs:
     - name: Build
       run: npm run build
       
+    - name: Generate PDF
+      run: |
+        npm install puppeteer
+        node -e "
+        const puppeteer = require('puppeteer');
+        (async () => {
+          const browser = await puppeteer.launch();
+          const page = await browser.newPage();
+          await page.goto('file://' + process.cwd() + '/dist/index.html', {waitUntil: 'networkidle0'});
+          await page.pdf({
+            path: './dist/franklin.henderson.pdf',
+            format: 'A4',
+            printBackground: true,
+            margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' }
+          });
+          await browser.close();
+        })();
+        "
+      
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
