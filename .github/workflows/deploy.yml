@@ -26,8 +26,12 @@ jobs:
     - name: Build
       run: npm run build
       
-    - name: Generate PDF
+    - name: Generate Resume Formats
       run: |
+        # Generate TXT, MD, JSON formats
+        node scripts/generateFormats.js
+        
+        # Generate PDF using Puppeteer
         npm install puppeteer
         node -e "
         const puppeteer = require('puppeteer');
@@ -42,8 +46,13 @@ jobs:
             margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' }
           });
           await browser.close();
+          console.log('✅ Generated PDF format');
         })();
         "
+        
+        # Try to generate DOCX (if pandoc available)
+        sudo apt-get update && sudo apt-get install -y pandoc || echo "Pandoc installation failed"
+        node scripts/generateDocx.js || echo "DOCX generation skipped"
       
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'

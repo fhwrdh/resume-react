@@ -99,7 +99,11 @@ const ContactSection = () => (
         <a href="http://resume.fhwrdh.net">resume.fhwrdh.net</a>
       </Bullet>
       <Bullet icon={FilePdfIcon}>
-        <a href="/franklin.henderson.pdf">franklin.henderson.pdf</a>
+        <a href="/franklin.henderson.pdf">PDF</a> • 
+        <a href="/franklin.henderson.txt">TXT</a> • 
+        <a href="/franklin.henderson.md">MD</a> • 
+        <a href="/franklin.henderson.json">JSON</a> • 
+        <a href="/franklin.henderson.docx">DOCX</a>
       </Bullet>
       <Print>
         <Bullet icon={GithubCircleIcon}>
