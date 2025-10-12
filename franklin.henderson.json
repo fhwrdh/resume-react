@@ -1,0 +1,171 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Franklin Henderson",
+    "label": "Principal Engineer / Team Lead",
+    "email": "work@fhwrdh.net",
+    "url": "https://resume.fhwrdh.net",
+    "summary": "Principal Engineer with 20+ years building and scaling software systems across fintech, gaming, and advertising technology. Currently leading frontend architecture and team development at Tilia, where I build React/GraphQL interfaces to a system that processes millions in virtual economy transactions.",
+    "location": {
+      "city": "San Francisco",
+      "region": "CA",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "fhwrdh",
+        "url": "https://github.com/fhwrdh"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "franklinhenderson",
+        "url": "https://linkedin.com/in/franklinhenderson"
+      },
+      {
+        "network": "Instagram",
+        "username": "fhwrdh",
+        "url": "https://instagram.com/fhwrdh"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tilia / Linden Lab / Thunes",
+      "position": "Principal Engineer / Team Lead",
+      "url": "",
+      "startDate": "2019",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": [
+        "Architected and delivered complete React-based administrative platform replacement as founding frontend engineer, transforming legacy Angular application into mission-critical multi-tenant interface serving both internal agents managing $millions in payouts/refunds/KYC and external customer support teams for self-service user administration",
+        "Designed and implemented GraphQL abstraction layer aggregating multiple backend REST services and databases, creating unified transaction-based data model that simplified complex invoicing, wallet, and payment operations for improved user experience and operational efficiency",
+        "Scaled from solo frontend engineer to technical leader of 4-person team, establishing engineering standards, mentoring practices, and development workflows while maintaining ownership of critical architecture decisions and technical direction",
+        "Built customer-facing embeddable widget handling TOS compliance, KYC workflows, and payment processing, then successfully transitioned ownership to dedicated team while maintaining architectural oversight and knowledge transfer"
+      ]
+    },
+    {
+      "name": "CJ Affiliate",
+      "position": "Progressive Engineering Leadership",
+      "url": "",
+      "startDate": "Jan 2014",
+      "endDate": "2019",
+      "summary": "",
+      "highlights": [
+        "Progressed from individual contributor to managing 40+ engineers across multiple teams, establishing department-wide standards for agile development, release planning, and technical excellence while maintaining hands-on technical contributions",
+        "Led modernization of flagship frontend application from legacy JavaScript to ES6/React, introducing modern build pipeline (npm, Gulp, Webpack) and establishing React as department-standard technology, influencing architectural decisions across entire engineering organization",
+        "Delivered high-performance publisher compliance testing system capable of 500,000 tests/day under tight deadlines for at-risk client, scaling from rough prototype to production system while mentoring junior team members",
+        "Built company-wide agile project management tool on Atlassian Jira providing data-driven progress insights, and created mobile SDK for iOS/Android event tracking with full App Store publication and developer portal",
+        "Prototyped customer-facing insights application featured at 2016 CJU Solutions Lounge, directly supporting sales and product strategy while establishing frontend chapter leadership role managing department-wide developer standards and training"
+      ]
+    },
+    {
+      "name": "Demand Magic",
+      "position": "Principal Developer",
+      "url": "",
+      "startDate": "Apr 2012",
+      "endDate": "Jan 2014",
+      "summary": "",
+      "highlights": [
+        "Built next-generation display advertising platform implementing complex rulesets across multiple ad networks, user attributes, and geographic targeting",
+        "Developed ETL data migration tools and real-time reporting dashboard for KPIs, impression statistics, and revenue tracking using Node.js, MongoDB, PostgreSQL, and AWS"
+      ]
+    },
+    {
+      "name": "TrueCar",
+      "position": "Principal Developer",
+      "url": "",
+      "startDate": "Sep 2011",
+      "endDate": "Apr 2012",
+      "summary": "",
+      "highlights": [
+        "Founded Internal Applications team to modernize legacy financial systems, leading hiring and technical direction for enterprise application consolidation",
+        "Led Microsoft Dynamics GP upgrade and migration across 15+ client installations while building web-based portal for financial applications using ASP.NET MVC and MSSQL"
+      ]
+    },
+    {
+      "name": "Progressive Technical Leadership (1997-2011)",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        "Pocket Kings, Dublin, IE / Los Angeles, CA (2005-2011) - Led engineering teams and agile transformation, .NET/C#/MSSQL systems",
+        "Movielink, Santa Monica, CA (2002-2005) - Enterprise Java applications, ATG Dynamo, Oracle data warehouse systems",
+        "Day Software, Orange County, CA (2001-2002) - Java enterprise integrations, content management systems",
+        "Post Communications / Netcentives, San Francisco, CA (1999-2001) - High-throughput email systems, Java/JavaScript, unit testing advocacy",
+        "ModaCAD / Styleclick.com, Los Angeles, CA (1997-1999) - Early web development, JavaScript/CSS, team leadership, e-commerce prototyping"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Node.js",
+        "Python",
+        "Go",
+        "GraphQL",
+        "REST APIs"
+      ]
+    },
+    {
+      "name": "Data",
+      "keywords": [
+        "PostgreSQL",
+        "MySQL",
+        "NoSQL"
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "keywords": [
+        "AWS",
+        "Docker",
+        "CI/CD",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Methodology",
+      "keywords": [
+        "TDD",
+        "Agile"
+      ]
+    },
+    {
+      "name": "AI Tools",
+      "keywords": [
+        "Claude",
+        "Gemini",
+        "Copilot",
+        "MCP"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Film Photography"
+    },
+    {
+      "name": "Travel"
+    },
+    {
+      "name": "Music"
+    },
+    {
+      "name": "Brewing"
+    }
+  ]
+}
