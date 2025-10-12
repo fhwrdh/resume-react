@@ -30,13 +30,16 @@ jobs:
       run: |
         # Generate TXT, MD, JSON formats
         node scripts/generateFormats.js
-        
-        # Generate PDF using Puppeteer
+
+        # Install Puppeteer
         npm install puppeteer
+
+        # Generate PDF using Puppeteer (with --no-sandbox for CI)
         node -e "
-        const puppeteer = require('puppeteer');
-        (async () => {
-          const browser = await puppeteer.launch();
+        import('puppeteer').then(async (puppeteer) => {
+          const browser = await puppeteer.default.launch({
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+          });
           const page = await browser.newPage();
           await page.goto('file://' + process.cwd() + '/dist/index.html', {waitUntil: 'networkidle0'});
           await page.pdf({
@@ -47,9 +50,9 @@ jobs:
           });
           await browser.close();
           console.log('✅ Generated PDF format');
-        })();
+        });
         "
-        
+
         # Try to generate DOCX (if pandoc available)
         sudo apt-get update && sudo apt-get install -y pandoc || echo "Pandoc installation failed"
         node scripts/generateDocx.js || echo "DOCX generation skipped"
