@@ -31,10 +31,7 @@ jobs:
         # Generate TXT, MD, JSON formats
         node scripts/generateFormats.js
 
-        # Install Puppeteer for PDF generation
-        npm install puppeteer
-
-        # Generate PDF using Puppeteer
+        # Generate PDF using Puppeteer (already installed via npm ci)
         node scripts/generatePdf.js
 
     # Reads site.config.js. On 'live' this is a no-op; on 'redirect'/'hidden'
