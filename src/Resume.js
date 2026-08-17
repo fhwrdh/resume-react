@@ -120,8 +120,8 @@ const SkillsSection = () => (
       <Bullet icon={NodejsIcon}>Node.js, Go, Python</Bullet>
       <Bullet icon={LanguageCss3Icon}>HTML, CSS, Vite</Bullet>
       <Bullet icon={DatabaseIcon}>PostgreSQL, MySQL, NoSQL</Bullet>
-      <Bullet icon={CubeUnfoldedIcon}>AWS, Docker, Linux</Bullet>
       <Bullet icon={GithubCircleIcon}>GitHub, GitLab, CI/CD</Bullet>
+      <Bullet icon={CubeUnfoldedIcon}>AWS, Docker, Linux</Bullet>
       <Bullet icon={HexagonMultipleIcon}>TDD, Agile</Bullet>
     </Description>
   </Section>
@@ -167,10 +167,7 @@ const AboutMeSection = () => (
   <Section>
     <Summary>
       <Point>
-        Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.
-      </Point>
-      <Point>
-        We're here to solve problems. Sometimes with code. Either way the work depends on taking people seriously, the ones I build with and the ones who end up using what we make.
+        I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I contribute to the underlying REST APIs too. I've run larger orgs before and chose to come back to building.
       </Point>
     </Summary>
   </Section>
@@ -185,7 +182,7 @@ const ExperienceSection = () => (
 
 const ProjectsSection = () => (
   <Section>
-    <SectionTitle>Projects</SectionTitle>
+    <SectionTitle>Recent Projects</SectionTitle>
     <Description>
       <Point role="Air Traffic Control, a work-in-flight dashboard">
         A dashboard I built for myself. One command polls the issue tracker and GitHub across about 20 repos and caches what it finds. A second pass sorts that snapshot into a single board, closest-to-done first, and a Claude Code slash command renders it. The fetching and sorting are ordinary deterministic code that runs before the agent sees anything, so the board never guesses at status.
@@ -228,6 +225,7 @@ const DesktopLayout = () => (
       <SkillsSection />
       <LeadershipSection />
       <InterestsSection />
+      <EducationSection />
     </Left>
     <Right>
       <AboutMeSection />
@@ -252,6 +250,7 @@ const MobileLayout = () => (
       <SkillsSection />
       <LeadershipSection />
       <InterestsSection />
+      <EducationSection />
     </WithBackground>
   </MobileContainer>
 );

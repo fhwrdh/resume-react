@@ -5,21 +5,21 @@ export default {
       location: 'San Francisco, CA (remote)',
       title: 'Principal Engineer / Team Lead',
       tenure: {
-        start: '2019',
+        start: 'May 2019',
         end: 'Present',
       },
       description: [
         {
-          text: `First frontend engineer on Admin Tools, Tilia's internal operations platform. Multi-tenant and role-governed, used by our compliance, fraud, and finance teams and by support staff at customer companies, who see it as their main window into Tilia. It processes millions in payouts and refunds, along with KYC, Watchlist, Settlements, and Tax`,
+          text: `Joined as the first frontend engineer on Admin Tools, Tilia's internal operations platform. The platform is multi-tenant and role-governed, used by our compliance, fraud, and finance teams and by support staff at customer companies, who see it as their main window into Tilia. It processes millions in payouts and refunds, along with KYC, Watchlist, Settlements, and Tax`,
         },
         {
-          text: `Designed and built the GraphQL layer Admin Tools runs on. That layer presents a set of Go REST services and their databases as one transaction-based model, so clients ask for what the business actually does instead of stitching service calls together`,
+          text: `Designed and built the GraphQL layer Admin Tools runs on. This layer sits atop a broad set of Go REST APIs and other data sources, and introduces a transaction model shaped around how the teams using Admin Tools think about their work`,
         },
         {
-          text: `Currently building token-based credentials for programmatic access to that layer, scoped so a token can never do more than the person who issued it`,
+          text: `Currently building delegated personal access tokens so AI agents can work against the GraphQL layer`,
         },
         {
-          text: `Shipped a customer-facing embeddable widget for TOS compliance, KYC, and payments, then handed it off to a dedicated team. I drew the API and component boundaries with that handoff in mind`,
+          text: `Shipped a customer-facing embeddable widget for TOS compliance, KYC, and payments, then handed it off to a dedicated team. Drew the API and component boundaries with that handoff in mind`,
         },
         {
           text: `Grew from solo frontend engineer to technical lead of a 4-person team, setting engineering standards and mentoring practices while owning architectural direction`,
@@ -32,11 +32,11 @@ export default {
       title: 'Progressive Engineering Leadership',
       tenure: {
         start: 'Jan 2014',
-        end: '2019',
+        end: 'May 2019',
       },
       description: [
         {
-          role: 'Senior Manager of Software Engineering (Feb 2018 - 2019)',
+          role: 'Senior Manager of Software Engineering (Feb 2018 - May 2019)',
           text: `Went from individual contributor to managing 40+ engineers across several teams. Set department-wide standards for agile process and release planning, and kept writing code the whole time`,
         },
         {
@@ -54,7 +54,7 @@ export default {
         },
         {
           role: 'Senior Software Engineer (Jan 2014 - Jan 2015)',
-          text: `Prototyped a customer-facing insights app that was featured at the 2016 CJU Solutions Lounge and fed into sales and product strategy. Took on the frontend chapter lead role, covering developer standards and training across the department`,
+          text: `Prototyped a customer-facing insights app that was featured at the CJU Solutions Lounge and fed into sales and product strategy. Took on the frontend chapter lead role, covering developer standards and training across the department`,
         },
       ],
     },
@@ -69,10 +69,10 @@ export default {
       },
       description: [
         {
-          text: `Built next-generation display advertising platform implementing complex rulesets across multiple ad networks, user attributes, and geographic targeting`,
+          text: `Built a display advertising platform that applied complex targeting rules across multiple ad networks, user attributes, and geography`,
         },
         {
-          text: `Developed ETL data migration tools and real-time reporting dashboard for KPIs, impression statistics, and revenue tracking using Node.js, MongoDB, PostgreSQL, and AWS`,
+          text: `Built the ETL data migration tools and a real-time reporting dashboard covering KPIs, impression statistics, and revenue, using Node.js, MongoDB, PostgreSQL, and AWS`,
         },
       ],
     },
@@ -86,10 +86,10 @@ export default {
       },
       description: [
         {
-          text: `Founded Internal Applications team to modernize legacy financial systems, leading hiring and technical direction for enterprise application consolidation`,
+          text: `Founded the Internal Applications team to modernize legacy financial systems, and led hiring and technical direction as those applications were consolidated`,
         },
         {
-          text: `Led Microsoft Dynamics GP upgrade and migration across 15+ client installations while building web-based portal for financial applications using ASP.NET MVC and MSSQL`,
+          text: `Led a Microsoft Dynamics GP upgrade and migration across 15+ client installations, and built a web portal for the financial applications using ASP.NET MVC and MSSQL`,
         },
       ],
     },
@@ -106,22 +106,32 @@ export default {
       description: [
         {
           role: 'Development Manager / Technical Lead',
+          start: '2005',
+          end: '2011',
           text: `Pocket Kings, Dublin, IE / Los Angeles, CA - Led engineering teams and agile transformation, .NET/C#/MSSQL systems`,
         },
         {
           role: 'Senior Software Engineer',
+          start: '2002',
+          end: '2005',
           text: `Movielink, Santa Monica, CA - Enterprise Java applications, ATG Dynamo, Oracle data warehouse systems`,
         },
         {
           role: 'Software Engineer',
+          start: '2001',
+          end: '2002',
           text: `Day Software, Orange County, CA - Java enterprise integrations, content management systems`,
         },
         {
           role: 'Software Engineer',
+          start: '1999',
+          end: '2001',
           text: `Post Communications / Netcentives, San Francisco, CA - Distributed high-throughput email delivery, Java/JavaScript, unit testing advocacy`,
         },
         {
           role: 'Software Engineer / Technical Lead',
+          start: '1997',
+          end: '1999',
           text: `ModaCAD / Styleclick.com, Los Angeles, CA - Early web development, JavaScript/CSS, team leadership, e-commerce prototyping`,
         },
       ],
