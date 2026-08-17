@@ -37,7 +37,7 @@ export default {
       description: [
         {
           role: 'Senior Manager of Software Engineering (Feb 2018 - May 2019)',
-          text: `Went from individual contributor to managing 40+ engineers across several teams. Set department-wide standards for agile process and release planning, and kept writing code the whole time`,
+          text: `Went from Team Lead to managing 40+ engineers across several teams. Set department-wide standards for agile process and release planning, and kept writing code the whole time`,
         },
         {
           role: 'Principal Engineer / Team Lead / Chapter Lead (Jan 2015 - Feb 2018)',
