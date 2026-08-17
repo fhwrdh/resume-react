@@ -158,7 +158,7 @@ const InterestsSection = () => (
       <Bullet icon={CameraIcon}>Film Photography</Bullet>
       <Bullet icon={AirplaneTakeoffIcon}>Travel</Bullet>
       <Bullet icon={HeadphonesIcon}>Music</Bullet>
-      <Bullet icon={MedalIcon}>Special Olympics Volunteer</Bullet>
+      <Bullet icon={MedalIcon}>Special Olympics</Bullet>
     </Description>
   </Section>
 );

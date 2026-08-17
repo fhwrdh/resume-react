@@ -146,7 +146,7 @@ function generateJSON() {
       {"name": "Film Photography"},
       {"name": "Travel"}, 
       {"name": "Music"},
-      {"name": "Special Olympics Volunteer"}
+      {"name": "Special Olympics"}
     ],
     "education": [
       {"institution": "CSUN", "area": "Math"},
@@ -237,7 +237,7 @@ An MCP server I run from Claude sessions. It tracks film from purchase through d
 
 ## Interests
 
-Film Photography • Travel • Music • Special Olympics Volunteer
+Film Photography • Travel • Music • Special Olympics
 
 ---
 
@@ -332,7 +332,7 @@ LEADERSHIP
 INTERESTS
 =========
 
-Film Photography, Travel, Music, Special Olympics Volunteer
+Film Photography, Travel, Music, Special Olympics
 
 EDUCATION
 =========
