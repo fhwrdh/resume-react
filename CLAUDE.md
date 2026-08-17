@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a React-based resume and cover letter application built with Vite. It generates a responsive resume that can be viewed on screen, printed to PDF, and exported in multiple formats (TXT, MD, JSON, DOCX, PDF). The application is optimized for both human readers and AI/ATS (Applicant Tracking System) parsing.
+This is a React-based resume and cover letter application built with Vite. It generates a responsive resume that can be viewed on screen, printed to PDF, and exported in multiple formats (TXT, MD, JSON, PDF). The application is optimized for both human readers and AI/ATS (Applicant Tracking System) parsing.
 
 ## Common Development Commands
 
@@ -33,14 +33,10 @@ The application is structured as a single-page React app with two main views:
 
 **Core Application:**
 - **`src/index.js`**: Entry point, renders either Resume or CoverLetter component
-- **`src/resume-data.js`**: Contains all resume content data (experience, skills, education)
+- **`src/resume-data.js`**: Contains all resume experience data (the single source of truth for work history)
 - **`src/ui.js`**: Shared styled-components and UI elements
 - **`src/globalCss.js`**: Global CSS styles
 - **`src/Job.js`**: Component for rendering individual job entries
-
-**AI/ATS Optimization (New):**
-- **`src/ai-optimization.js`**: Comprehensive skills taxonomy with proficiency levels, years of experience, and context mapping for optimal ATS keyword matching. Includes O*NET-aligned categorization and quantified achievement templates
-- **`src/ai-resume-data.js`**: Enhanced resume data with structured metrics, semantic categorization, and Schema.org structured data for AI comprehension. Features quantified achievements and impact metrics for each role
 
 ### Technology Stack
 
@@ -50,15 +46,17 @@ The application is structured as a single-page React app with two main views:
 - **react-responsive 9.0**: Media queries and responsive design
 - **mdi-react 3.3**: Material Design icons
 
-### AI/ATS Optimization Strategy
+### Machine-Readable Output
 
-The resume data structure is optimized for both AI parsing and ATS scanning:
+`scripts/generateFormats.js` emits TXT, MD, and JSON (JSON Resume schema) from `src/resume-data.js` at build time, so ATS and AI readers get a structured surface rather than parsing the rendered page. Summary, skills, leadership, community, and interests are currently hardcoded in that script and duplicated in `src/Resume.js` — edit both when changing them.
 
-1. **Structured Skills Taxonomy**: Each skill includes proficiency level, years of experience, contexts, and related terms
-2. **Quantified Achievements**: Every role description includes metrics (team size, budget responsibility, scale, performance improvements)
-3. **Semantic Categorization**: Experiences are categorized (architecture, technical_leadership, team_leadership, etc.)
-4. **Keyword Optimization**: Comprehensive keyword mapping for role titles, technologies, leadership skills, and industry domains
-5. **Schema.org Structured Data**: Machine-readable person schema for enhanced AI comprehension
+### Publish Mode Toggle
+
+`site.config.js` controls what actually gets published to resume.fhwrdh.net. Set `mode` to `'live'`, `'redirect'`, or `'hidden'`, commit, and push — `scripts/applySiteMode.js` runs after the build and reshapes `dist/` accordingly. In `redirect`/`hidden` it removes the generated resume files and the app bundle (so nothing is reachable at its direct URL), keeps `CNAME`, and writes a placeholder plus a `robots.txt` disallow.
+
+This deliberately avoids touching the GitHub Pages configuration — same branch, same custom domain, same TLS certificate — so flipping back to `live` is just another push. Disabling Pages itself would force the certificate to be re-provisioned, which can take hours.
+
+Note: GitHub Pages cannot return an HTTP 302. `redirect` mode uses a meta refresh plus `location.replace()`, which is client-side.
 
 ### Responsive Design
 
@@ -78,7 +76,7 @@ The application deploys to GitHub Pages:
 ### Recent Improvements
 
 1. Migrated from Create React App to Vite for faster builds and modern tooling
-2. Added multi-format resume generation (TXT, MD, JSON, DOCX, PDF)
-3. Integrated AI/ATS optimization layer with comprehensive skills taxonomy
-4. Enhanced resume data with quantified metrics and structured semantic data
-5. PDF generation integrated into build workflow
+2. Added multi-format resume generation (TXT, MD, JSON, PDF)
+3. PDF generation integrated into build workflow
+4. Reframed content around platform/API work; added a Projects section
+5. Removed the unused ai-optimization.js / ai-resume-data.js modules
