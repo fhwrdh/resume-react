@@ -59,40 +59,6 @@ export default {
       ],
     },
 
-    {
-      companyName: 'Demand Magic',
-      location: 'Thousand Oaks, CA',
-      title: 'Principal Developer',
-      tenure: {
-        start: 'Apr 2012',
-        end: 'Jan 2014',
-      },
-      description: [
-        {
-          text: `Built a display advertising platform that applied complex targeting rules across multiple ad networks, user attributes, and geography`,
-        },
-        {
-          text: `Built the ETL data migration tools and a real-time reporting dashboard covering KPIs, impression statistics, and revenue, using Node.js, MongoDB, PostgreSQL, and AWS`,
-        },
-      ],
-    },
-    {
-      companyName: 'TrueCar',
-      location: 'Santa Monica, CA',
-      title: 'Principal Developer',
-      tenure: {
-        start: 'Sep 2011',
-        end: 'Apr 2012',
-      },
-      description: [
-        {
-          text: `Founded the Internal Applications team to modernize legacy financial systems, and led hiring and technical direction as those applications were consolidated`,
-        },
-        {
-          text: `Led a Microsoft Dynamics GP upgrade and migration across 15+ client installations, and built a web portal for the financial applications using ASP.NET MVC and MSSQL`,
-        },
-      ],
-    },
 
     {
       companyName: 'Earlier Experience',
@@ -104,6 +70,18 @@ export default {
       },
       compact: true,
       description: [
+        {
+          role: 'Principal Developer',
+          start: 'Apr 2012',
+          end: 'Jan 2014',
+          text: `Demand Magic, Thousand Oaks, CA - Display advertising platform with complex targeting rules, ETL tooling and real-time reporting, Node.js/MongoDB/PostgreSQL/AWS`,
+        },
+        {
+          role: 'Principal Developer',
+          start: 'Sep 2011',
+          end: 'Apr 2012',
+          text: `TrueCar, Santa Monica, CA - Founded the Internal Applications team, modernized legacy financial systems, ASP.NET MVC/MSSQL`,
+        },
         {
           role: 'Development Manager / Technical Lead',
           start: '2005',

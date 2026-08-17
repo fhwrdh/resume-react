@@ -70,7 +70,7 @@ function generateJSON() {
       "name": "Franklin Henderson",
       "email": "work@fhwrdh.net",
       "url": "https://resume.fhwrdh.net",
-      "summary": "I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I contribute to the underlying REST APIs too. I've run larger orgs before and chose to come back to building.",
+      "summary": "I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I also contribute to the underlying REST APIs. I've managed at department scale before and chose to come back to building and learning.",
       "location": {
         "city": "San Francisco",
         "region": "CA",
@@ -169,7 +169,7 @@ function generateMarkdown() {
 
 ## Summary
 
-I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I contribute to the underlying REST APIs too. I've run larger orgs before and chose to come back to building.
+I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I also contribute to the underlying REST APIs. I've managed at department scale before and chose to come back to building and learning.
 
 ---
 
@@ -262,7 +262,7 @@ Instagram: https://instagram.com/fhwrdh
 SUMMARY
 =======
 
-I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I contribute to the underlying REST APIs too. I've run larger orgs before and chose to come back to building.
+I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I also contribute to the underlying REST APIs. I've managed at department scale before and chose to come back to building and learning.
 
 EXPERIENCE
 ==========
