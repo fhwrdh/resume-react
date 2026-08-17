@@ -37,10 +37,11 @@ jobs:
         # Generate PDF using Puppeteer
         node scripts/generatePdf.js
 
-        # Try to generate DOCX (if pandoc available)
-        sudo apt-get update && sudo apt-get install -y pandoc || echo "Pandoc installation failed"
-        node scripts/generateDocx.js || echo "DOCX generation skipped"
-      
+    # Reads site.config.js. On 'live' this is a no-op; on 'redirect'/'hidden'
+    # it replaces dist with a placeholder and removes the resume files.
+    - name: Apply site mode
+      run: node scripts/applySiteMode.js
+
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       uses: peaceiris/actions-gh-pages@v3
