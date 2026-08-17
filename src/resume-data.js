@@ -11,7 +11,7 @@ export default {
       summary: `Joined as the first frontend engineer on Admin Tools, Tilia's internal operations platform. It processes millions in payouts and refunds, along with KYC, Watchlist, Settlements, and Tax.`,
       description: [
         {
-          text: `Build and maintain the Admin Tools client, a React SPA of roughly 40 screens. Every screen is permission-aware, so compliance, fraud, and finance teams and the support staff at customer companies each see only what their role and tenant allow`,
+          text: `Build and maintain the Admin Tools UI, a React SPA of roughly 40 screens. Every screen is permission-aware, so compliance, fraud, and finance teams and the support staff at customer companies each see only what their role and tenant allow`,
         },
         {
           text: `Currently building delegated personal access tokens so AI agents can act against the GraphQL layer on a person's behalf, bounded by that person's own role and tenant rather than granted authority of their own`,
