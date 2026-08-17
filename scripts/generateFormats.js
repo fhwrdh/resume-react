@@ -99,6 +99,10 @@ function generateJSON() {
         "keywords": ["JavaScript", "TypeScript", "React"]
       },
       {
+        "name": "UX",
+        "keywords": ["User experience"]
+      },
+      {
         "name": "APIs",
         "keywords": ["GraphQL", "REST API design"]
       },
@@ -143,16 +147,15 @@ function generateJSON() {
         "keywords": ["MCP", "Agent tooling", "Tool design"]
       }
     ],
+    "education": [
+      {"institution": "CSUN", "area": "Math"},
+      {"institution": "Santa Monica College", "area": "CS"}
+    ],
     "interests": [
       {"name": "Film Photography"},
       {"name": "Travel"}, 
       {"name": "Music"},
       {"name": "Special Olympics"}
-    ],
-    "education": [
-      {"institution": "CSUN", "area": "Math"},
-      {"institution": "Santa Monica College", "area": "CS"},
-      {"institution": "College of Marin", "area": "CS"}
     ]
   };
   
@@ -206,6 +209,7 @@ I've spent 20+ years building software across fintech, gaming, and ad tech. Thes
 ## Skills
 
 **Frontend:** JavaScript, TypeScript, React  
+**UX:** User experience  
 **APIs:** GraphQL, REST API design  
 **AI Tools:** Claude, Gemini, Copilot, MCP  
 **Backend:** Node.js, Go, Python  
@@ -237,15 +241,15 @@ An MCP server I run from Claude sessions. It tracks film from purchase through d
 
 ---
 
-## Interests
+## Education
 
-Film Photography • Travel • Music • Special Olympics
+CSUN (Math) • Santa Monica College (CS)
 
 ---
 
-## Education
+## Interests
 
-CSUN (Math) • Santa Monica College (CS) • College of Marin (CS)
+Film Photography • Travel • Music • Special Olympics
 `;
 
   return md;
@@ -298,6 +302,7 @@ EXPERIENCE
 ======
 
 Frontend: JavaScript, TypeScript, React
+UX: User experience
 APIs: GraphQL, REST API design
 AI Tools: Claude, Gemini, Copilot, MCP
 Backend: Node.js, Go, Python
@@ -332,15 +337,15 @@ LEADERSHIP
 • Roadmap Planning
 • Cross-functional Collaboration
 
+EDUCATION
+=========
+
+CSUN (Math), Santa Monica College (CS)
+
 INTERESTS
 =========
 
 Film Photography, Travel, Music, Special Olympics
-
-EDUCATION
-=========
-
-CSUN (Math), Santa Monica College (CS), College of Marin (CS)
 `;
 
   return txt;

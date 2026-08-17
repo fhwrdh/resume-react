@@ -9,6 +9,7 @@ import {
   DatabaseIcon,
   EmailIcon,
   FilePdfIcon,
+  GestureTapIcon,
   GithubCircleIcon,
   GraphqlIcon,
   HeadphonesIcon,
@@ -115,6 +116,7 @@ const SkillsSection = () => (
       <Bullet tight icon={LanguageJavascriptIcon}>
         JavaScript, TypeScript, React
       </Bullet>
+      <Bullet icon={GestureTapIcon}>User experience</Bullet>
       <Bullet icon={GraphqlIcon}>GraphQL, REST API design</Bullet>
       <Bullet icon={RobotIcon}>Claude, Gemini, Copilot, MCP</Bullet>
       <Bullet icon={NodejsIcon}>Node.js, Go, Python</Bullet>
@@ -146,7 +148,6 @@ const EducationSection = () => (
     <Description tight>
       <Bullet icon={SchoolIcon}>CSUN, Math</Bullet>
       <Bullet icon={SchoolIcon}>Santa Monica College, CS</Bullet>
-      <Bullet icon={SchoolIcon}>College of Marin, CS</Bullet>
     </Description>
   </Section>
 );
@@ -224,8 +225,8 @@ const DesktopLayout = () => (
       <ContactSection />
       <SkillsSection />
       <LeadershipSection />
-      <InterestsSection />
       <EducationSection />
+      <InterestsSection />
     </Left>
     <Right>
       <AboutMeSection />
@@ -249,8 +250,8 @@ const MobileLayout = () => (
     <WithBackground>
       <SkillsSection />
       <LeadershipSection />
-      <InterestsSection />
       <EducationSection />
+      <InterestsSection />
     </WithBackground>
   </MobileContainer>
 );

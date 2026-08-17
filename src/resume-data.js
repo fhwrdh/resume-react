@@ -17,7 +17,7 @@ export default {
           text: `Currently building delegated personal access tokens so AI agents can act against the GraphQL layer on a person's behalf, bounded by that person's own role and tenant rather than granted authority of their own`,
         },
         {
-          text: `Designed and built the GraphQL layer Admin Tools runs on. This layer sits atop a broad set of Go REST APIs and other data sources, and introduces a transaction model shaped around how the teams using Admin Tools think about their work`,
+          text: `Designed and built the GraphQL layer Admin Tools runs on. This layer sits atop a broad set of Go REST APIs and other data sources and introduces a transaction model shaped around the work operators actually do`,
         },
         {
           text: `Shipped a customer-facing embeddable widget for TOS compliance, KYC, and payments, then handed it off to a dedicated team. Drew the API and component boundaries with that handoff in mind`,
@@ -51,7 +51,7 @@ export default {
           text: `Took a publisher compliance testing system from rough prototype to production under a hard deadline, for a client we were close to losing. It runs 500,000 tests a day. Mentored the junior engineers on the team along the way`,
         },
         {
-          text: `Built a company-wide project management tool on top of Jira that reported on how delivery was actually going`,
+          text: `Built a company-wide project management tool on top of Jira that reported delivery progress across teams`,
         },
         {
           role: 'Senior Software Engineer (Jan 2014 - Jan 2015)',
