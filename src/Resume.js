@@ -5,7 +5,6 @@ import {
   AirplaneTakeoffIcon,
   CameraIcon,
   ChartLineIcon,
-  CodeBracesIcon,
   CubeUnfoldedIcon,
   DatabaseIcon,
   EmailIcon,
@@ -14,20 +13,17 @@ import {
   GraphqlIcon,
   HeadphonesIcon,
   HexagonMultipleIcon,
-  HopsIcon,
   HumanHandsupIcon,
   InstagramIcon,
   LanguageCsharpIcon,
   LanguageCss3Icon,
   LanguageJavascriptIcon,
-  LinkedinBoxIcon,
   MapIcon,
+  MedalIcon,
   NodejsIcon,
   RobotIcon,
   SchoolIcon,
-  StarIcon,
   WebIcon,
-  WebpackIcon,
 } from 'mdi-react';
 import data from './resume-data.js';
 import Job from './Job';
@@ -58,11 +54,6 @@ const Github = () => (
     <GithubCircleIcon />
   </a>
 );
-const LinkedIn = () => (
-  <a href="https://www.linkedin.com/in/franklinhenderson/">
-    <LinkedinBoxIcon />
-  </a>
-);
 const Instagram = () => (
   <a href="https://www.instagram.com/fhwrdh/">
     <InstagramIcon />
@@ -81,7 +72,6 @@ const Head = () => (
     <Screen>
       <Icons>
         <Github />
-        <LinkedIn />
         <Instagram />
       </Icons>
     </Screen>
@@ -98,19 +88,17 @@ const ContactSection = () => (
       <Bullet icon={WebIcon}>
         <a href="http://resume.fhwrdh.net">resume.fhwrdh.net</a>
       </Bullet>
-      <Bullet icon={FilePdfIcon}>
-        <a href="/franklin.henderson.pdf">PDF</a> • 
-        <a href="/franklin.henderson.txt">TXT</a> • 
-        <a href="/franklin.henderson.md">MD</a> • 
-        <a href="/franklin.henderson.json">JSON</a> • 
-        <a href="/franklin.henderson.docx">DOCX</a>
-      </Bullet>
+      <Screen>
+        <Bullet icon={FilePdfIcon}>
+          <a href="/franklin.henderson.pdf">PDF</a> • 
+          <a href="/franklin.henderson.txt">TXT</a> • 
+          <a href="/franklin.henderson.md">MD</a> •
+          <a href="/franklin.henderson.json">JSON</a>
+        </Bullet>
+      </Screen>
       <Print>
         <Bullet icon={GithubCircleIcon}>
           <a href="https://www.github.com/fhwrdh">github.com/fhwrdh</a>
-        </Bullet>
-        <Bullet icon={LinkedinBoxIcon}>
-          <a href="https://www.linkedin.com/in/franklinhenderson">linkedin.com/in/franklinhenderson</a>
         </Bullet>
         <Bullet icon={InstagramIcon}>
           <a href="https://www.instagram.com/fhwrdh">instagram.com/fhwrdh</a>
@@ -127,15 +115,14 @@ const SkillsSection = () => (
       <Bullet tight icon={LanguageJavascriptIcon}>
         JavaScript, TypeScript, React
       </Bullet>
-      <Bullet icon={LanguageCss3Icon}>HTML, CSS</Bullet>
-      <Bullet icon={NodejsIcon}>Node.js, npm, Vite</Bullet>
-      <Bullet icon={GraphqlIcon}>GraphQL, REST APIs</Bullet>
+      <Bullet icon={GraphqlIcon}>GraphQL, REST API design</Bullet>
       <Bullet icon={RobotIcon}>Claude, Gemini, Copilot, MCP</Bullet>
-      <Bullet icon={CodeBracesIcon}>Python, Go</Bullet>
+      <Bullet icon={NodejsIcon}>Node.js, Go, Python</Bullet>
+      <Bullet icon={LanguageCss3Icon}>HTML, CSS, Vite</Bullet>
       <Bullet icon={DatabaseIcon}>PostgreSQL, MySQL, NoSQL</Bullet>
-      <Bullet icon={HexagonMultipleIcon}>TDD, Agile</Bullet>
+      <Bullet icon={CubeUnfoldedIcon}>AWS, Docker, Linux</Bullet>
       <Bullet icon={GithubCircleIcon}>GitHub, GitLab, CI/CD</Bullet>
-      <Bullet icon={CubeUnfoldedIcon}>AWS, Docker</Bullet>
+      <Bullet icon={HexagonMultipleIcon}>TDD, Agile</Bullet>
     </Description>
   </Section>
 );
@@ -149,18 +136,6 @@ const LeadershipSection = () => (
       <Bullet icon={ChartLineIcon}>Technical Strategy</Bullet>
       <Bullet icon={MapIcon}>Roadmap Planning</Bullet>
       <Bullet icon={AccountMultipleIcon}>Cross-functional Collaboration</Bullet>
-      <Bullet icon={StarIcon}>Performance Management</Bullet>
-    </Description>
-  </Section>
-);
-
-const UserGroupsSection = () => (
-  <Section>
-    <SectionTitle>Community</SectionTitle>
-    <Description tight>
-      <Bullet icon={AccountMultipleIcon}>WLVJS Co-Organizer</Bullet>
-      <Bullet icon={AccountMultipleIcon}>Lunch.js Champion</Bullet>
-      <Bullet icon={AccountMultipleIcon}>JS.LA Member</Bullet>
     </Description>
   </Section>
 );
@@ -183,7 +158,7 @@ const InterestsSection = () => (
       <Bullet icon={CameraIcon}>Film Photography</Bullet>
       <Bullet icon={AirplaneTakeoffIcon}>Travel</Bullet>
       <Bullet icon={HeadphonesIcon}>Music</Bullet>
-      <Bullet icon={HopsIcon}>Brewing</Bullet>
+      <Bullet icon={MedalIcon}>Special Olympics Volunteer</Bullet>
     </Description>
   </Section>
 );
@@ -192,10 +167,10 @@ const AboutMeSection = () => (
   <Section>
     <Summary>
       <Point>
-        Principal Engineer with 20+ years building and scaling software systems across fintech, gaming, and advertising technology. Currently leading frontend architecture and team development at Tilia, where I build React/GraphQL interfaces to a system that processes millions in virtual economy transactions.
+        Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.
       </Point>
       <Point>
-        Combine deep technical expertise in modern frontend technologies with proven leadership experience, having grown engineering teams from solo contributors to high-performing units. Passionate about maintainable architecture, test-driven development, and mentoring engineers while maintaining hands-on contribution to complex technical challenges. Value close collaboration with users and stakeholders to build tools that truly serve their needs.
+        We're here to solve problems. Sometimes with code. Either way the work depends on taking people seriously, the ones I build with and the ones who end up using what we make.
       </Point>
     </Summary>
   </Section>
@@ -205,6 +180,20 @@ const ExperienceSection = () => (
   <Section>
     <SectionTitle>Experience</SectionTitle>
     {data.experience.map((e, idx) => <Job key={idx} data={e} />)}
+  </Section>
+);
+
+const ProjectsSection = () => (
+  <Section>
+    <SectionTitle>Projects</SectionTitle>
+    <Description>
+      <Point role="Air Traffic Control, a work-in-flight dashboard">
+        A dashboard I built for myself. One command polls the issue tracker and GitHub across about 20 repos and caches what it finds. A second pass sorts that snapshot into a single board, closest-to-done first, and a Claude Code slash command renders it. The fetching and sorting are ordinary deterministic code that runs before the agent sees anything, so the board never guesses at status.
+      </Point>
+      <Point role="Tomu, an MCP tool server for film photography">
+        An MCP server I run from Claude sessions. It tracks film from purchase through development, works out chemistry and dilutions, and keeps my field notes. Every recommendation says where it came from, so I can tell whether a suggestion rests on my own logged results or on a manufacturer's datasheet.
+      </Point>
+    </Description>
   </Section>
 );
 
@@ -238,12 +227,12 @@ const DesktopLayout = () => (
       <ContactSection />
       <SkillsSection />
       <LeadershipSection />
-      <UserGroupsSection />
       <InterestsSection />
     </Left>
     <Right>
       <AboutMeSection />
       <ExperienceSection />
+      <ProjectsSection />
     </Right>
   </Container>
 );
@@ -257,11 +246,11 @@ const MobileLayout = () => (
     <WithoutBackground>
       <AboutMeSection />
       <ExperienceSection />
+      <ProjectsSection />
     </WithoutBackground>
     <WithBackground>
       <SkillsSection />
       <LeadershipSection />
-      <UserGroupsSection />
       <InterestsSection />
     </WithBackground>
   </MobileContainer>

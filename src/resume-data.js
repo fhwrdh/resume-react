@@ -10,21 +10,23 @@ export default {
       },
       description: [
         {
-          text: `Architected and delivered complete React-based administrative platform replacement as founding frontend engineer, transforming legacy Angular application into mission-critical multi-tenant interface serving both internal agents managing $millions in payouts/refunds/KYC and external customer support teams for self-service user administration`,
+          text: `First frontend engineer on Admin Tools, Tilia's internal operations platform. Multi-tenant and role-governed, used by our compliance, fraud, and finance teams and by support staff at customer companies, who see it as their main window into Tilia. It processes millions in payouts and refunds, along with KYC, Watchlist, Settlements, and Tax`,
         },
         {
-          text: `Designed and implemented GraphQL abstraction layer aggregating multiple backend REST services and databases, creating unified transaction-based data model that simplified complex invoicing, wallet, and payment operations for improved user experience and operational efficiency`,
+          text: `Designed and built the GraphQL layer Admin Tools runs on. That layer presents a set of Go REST services and their databases as one transaction-based model, so clients ask for what the business actually does instead of stitching service calls together`,
         },
         {
-          text: `Scaled from solo frontend engineer to technical leader of 4-person team, establishing engineering standards, mentoring practices, and development workflows while maintaining ownership of critical architecture decisions and technical direction`,
+          text: `Currently building token-based credentials for programmatic access to that layer, scoped so a token can never do more than the person who issued it`,
         },
         {
-          text: `Built customer-facing embeddable widget handling TOS compliance, KYC workflows, and payment processing, then successfully transitioned ownership to dedicated team while maintaining architectural oversight and knowledge transfer`,
+          text: `Shipped a customer-facing embeddable widget for TOS compliance, KYC, and payments, then handed it off to a dedicated team. I drew the API and component boundaries with that handoff in mind`,
+        },
+        {
+          text: `Grew from solo frontend engineer to technical lead of a 4-person team, setting engineering standards and mentoring practices while owning architectural direction`,
         },
       ],
     },
     {
-      breakAfter: true,
       companyName: 'CJ Affiliate',
       location: 'Westlake Village, CA',
       title: 'Progressive Engineering Leadership',
@@ -35,21 +37,24 @@ export default {
       description: [
         {
           role: 'Senior Manager of Software Engineering (Feb 2018 - 2019)',
-          text: `Progressed from individual contributor to managing 40+ engineers across multiple teams, establishing department-wide standards for agile development, release planning, and technical excellence while maintaining hands-on technical contributions`,
+          text: `Went from individual contributor to managing 40+ engineers across several teams. Set department-wide standards for agile process and release planning, and kept writing code the whole time`,
         },
         {
           role: 'Principal Engineer / Team Lead / Chapter Lead (Jan 2015 - Feb 2018)',
-          text: `Led modernization of flagship frontend application from legacy JavaScript to ES6/React, introducing modern build pipeline (npm, Gulp, Webpack) and establishing React as department-standard technology, influencing architectural decisions across entire engineering organization`,
+          text: `Led the move of the flagship frontend off legacy JavaScript onto ES6 and React, and brought in a real build pipeline (npm, Gulp, Webpack). React became the department standard on the back of that work`,
         },
         {
-          text: `Delivered high-performance publisher compliance testing system capable of 500,000 tests/day under tight deadlines for at-risk client, scaling from rough prototype to production system while mentoring junior team members`,
+          text: `Built an iOS/Android event-tracking SDK for outside developers, published to the App Store, with a developer portal to go with it`,
         },
         {
-          text: `Built company-wide agile project management tool on Atlassian Jira providing data-driven progress insights, and created mobile SDK for iOS/Android event tracking with full App Store publication and developer portal`,
+          text: `Took a publisher compliance testing system from rough prototype to production under a hard deadline, for a client we were close to losing. It runs 500,000 tests a day. Mentored the junior engineers on the team along the way`,
+        },
+        {
+          text: `Built a company-wide project management tool on top of Jira that reported on how delivery was actually going`,
         },
         {
           role: 'Senior Software Engineer (Jan 2014 - Jan 2015)',
-          text: `Prototyped customer-facing insights application featured at 2016 CJU Solutions Lounge, directly supporting sales and product strategy while establishing frontend chapter leadership role managing department-wide developer standards and training`,
+          text: `Prototyped a customer-facing insights app that was featured at the 2016 CJU Solutions Lounge and fed into sales and product strategy. Took on the frontend chapter lead role, covering developer standards and training across the department`,
         },
       ],
     },
@@ -90,7 +95,7 @@ export default {
     },
 
     {
-      companyName: 'Progressive Technical Leadership (1997-2011)',
+      companyName: 'Earlier Experience',
       location: '',
       title: '',
       tenure: {
@@ -101,23 +106,23 @@ export default {
       description: [
         {
           role: 'Development Manager / Technical Lead',
-          text: `Pocket Kings, Dublin, IE / Los Angeles, CA (2005-2011) - Led engineering teams and agile transformation, .NET/C#/MSSQL systems`,
+          text: `Pocket Kings, Dublin, IE / Los Angeles, CA - Led engineering teams and agile transformation, .NET/C#/MSSQL systems`,
         },
         {
           role: 'Senior Software Engineer',
-          text: `Movielink, Santa Monica, CA (2002-2005) - Enterprise Java applications, ATG Dynamo, Oracle data warehouse systems`,
+          text: `Movielink, Santa Monica, CA - Enterprise Java applications, ATG Dynamo, Oracle data warehouse systems`,
         },
         {
           role: 'Software Engineer',
-          text: `Day Software, Orange County, CA (2001-2002) - Java enterprise integrations, content management systems`,
+          text: `Day Software, Orange County, CA - Java enterprise integrations, content management systems`,
         },
         {
           role: 'Software Engineer',
-          text: `Post Communications / Netcentives, San Francisco, CA (1999-2001) - High-throughput email systems, Java/JavaScript, unit testing advocacy`,
+          text: `Post Communications / Netcentives, San Francisco, CA - Distributed high-throughput email delivery, Java/JavaScript, unit testing advocacy`,
         },
         {
           role: 'Software Engineer / Technical Lead',
-          text: `ModaCAD / Styleclick.com, Los Angeles, CA (1997-1999) - Early web development, JavaScript/CSS, team leadership, e-commerce prototyping`,
+          text: `ModaCAD / Styleclick.com, Los Angeles, CA - Early web development, JavaScript/CSS, team leadership, e-commerce prototyping`,
         },
       ],
     },

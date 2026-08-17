@@ -19,7 +19,7 @@ function generateJSON() {
       "label": "Principal Engineer / Team Lead",
       "email": "work@fhwrdh.net",
       "url": "https://resume.fhwrdh.net",
-      "summary": "Principal Engineer with 20+ years building and scaling software systems across fintech, gaming, and advertising technology. Currently leading frontend architecture and team development at Tilia, where I build React/GraphQL interfaces to a system that processes millions in virtual economy transactions.",
+      "summary": "Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.",
       "location": {
         "city": "San Francisco",
         "region": "CA",
@@ -30,11 +30,6 @@ function generateJSON() {
           "network": "GitHub",
           "username": "fhwrdh",
           "url": "https://github.com/fhwrdh"
-        },
-        {
-          "network": "LinkedIn",
-          "username": "franklinhenderson",
-          "url": "https://linkedin.com/in/franklinhenderson"
         },
         {
           "network": "Instagram",
@@ -55,11 +50,19 @@ function generateJSON() {
     "skills": [
       {
         "name": "Frontend",
-        "keywords": ["JavaScript", "TypeScript", "React", "HTML", "CSS"]
+        "keywords": ["JavaScript", "TypeScript", "React", "HTML", "CSS", "Vite"]
       },
       {
-        "name": "Backend", 
-        "keywords": ["Node.js", "Python", "Go", "GraphQL", "REST APIs"]
+        "name": "APIs & Platform",
+        "keywords": ["GraphQL", "REST APIs", "API design", "SDKs", "Multi-tenancy", "AuthN/AuthZ"]
+      },
+      {
+        "name": "AI Tools",
+        "keywords": ["Claude", "Gemini", "Copilot", "MCP"]
+      },
+      {
+        "name": "Backend",
+        "keywords": ["Node.js", "Go", "Python", "Microservices"]
       },
       {
         "name": "Data",
@@ -67,22 +70,30 @@ function generateJSON() {
       },
       {
         "name": "Infrastructure",
-        "keywords": ["AWS", "Docker", "CI/CD", "GitHub"]
+        "keywords": ["AWS", "Docker", "Linux", "CI/CD", "GitHub"]
       },
       {
         "name": "Methodology",
         "keywords": ["TDD", "Agile"]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Air Traffic Control",
+        "description": "A dashboard I built for myself. One command polls the issue tracker and GitHub across about 20 repos and caches what it finds. A second pass sorts that snapshot into a single board, closest-to-done first, and a Claude Code slash command renders it. The fetching and sorting are ordinary deterministic code that runs before the agent sees anything, so the board never guesses at status.",
+        "keywords": ["Agent tooling", "CLI design", "Reconciliation", "Node.js"]
       },
       {
-        "name": "AI Tools",
-        "keywords": ["Claude", "Gemini", "Copilot", "MCP"]
+        "name": "Tomu",
+        "description": "An MCP server I run from Claude sessions. It tracks film from purchase through development, works out chemistry and dilutions, and keeps my field notes. Every recommendation says where it came from, so I can tell whether a suggestion rests on my own logged results or on a manufacturer's datasheet.",
+        "keywords": ["MCP", "Agent tooling", "Tool design"]
       }
     ],
     "interests": [
       {"name": "Film Photography"},
       {"name": "Travel"}, 
       {"name": "Music"},
-      {"name": "Brewing"}
+      {"name": "Special Olympics Volunteer"}
     ]
   };
   
@@ -95,15 +106,15 @@ function generateMarkdown() {
 *Principal Engineer / Team Lead*
 
 📧 work@fhwrdh.net | 🌐 [resume.fhwrdh.net](https://resume.fhwrdh.net)  
-💼 [LinkedIn](https://linkedin.com/in/franklinhenderson) | 💻 [GitHub](https://github.com/fhwrdh) | 📸 [Instagram](https://instagram.com/fhwrdh)
+💻 [GitHub](https://github.com/fhwrdh) | 📸 [Instagram](https://instagram.com/fhwrdh)
 
 ---
 
 ## Summary
 
-Principal Engineer with 20+ years building and scaling software systems across fintech, gaming, and advertising technology. Currently leading frontend architecture and team development at Tilia, where I build React/GraphQL interfaces to a system that processes millions in virtual economy transactions.
+Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.
 
-Combine deep technical expertise in modern frontend technologies with proven leadership experience, having grown engineering teams from solo contributors to high-performing units. Passionate about maintainable architecture, test-driven development, and mentoring engineers while maintaining hands-on contribution to complex technical challenges.
+We're here to solve problems. Sometimes with code. Either way the work depends on taking people seriously, the ones I build with and the ones who end up using what we make.
 
 ---
 
@@ -134,12 +145,23 @@ Combine deep technical expertise in modern frontend technologies with proven lea
 
 ## Skills
 
-**Frontend:** JavaScript, TypeScript, React, HTML, CSS  
-**Backend:** Node.js, Python, Go, GraphQL, REST APIs  
+**Frontend:** JavaScript, TypeScript, React, HTML, CSS, Vite  
+**APIs & Platform:** GraphQL, REST APIs, API design, SDKs, multi-tenancy, authN/authZ  
+**AI Tools:** Claude, Gemini, Copilot, MCP  
+**Backend:** Node.js, Go, Python, microservices  
 **Data:** PostgreSQL, MySQL, NoSQL  
-**Infrastructure:** AWS, Docker, CI/CD, GitHub  
-**Methodology:** TDD, Agile  
-**AI Tools:** Claude, Gemini, Copilot, MCP
+**Infrastructure:** AWS, Docker, Linux, CI/CD, GitHub  
+**Methodology:** TDD, Agile
+
+---
+
+## Projects
+
+**Air Traffic Control, a work-in-flight dashboard**  
+A dashboard I built for myself. One command polls the issue tracker and GitHub across about 20 repos and caches what it finds. A second pass sorts that snapshot into a single board, closest-to-done first, and a Claude Code slash command renders it. The fetching and sorting are ordinary deterministic code that runs before the agent sees anything, so the board never guesses at status.
+
+**Tomu, an MCP tool server for film photography**  
+An MCP server I run from Claude sessions. It tracks film from purchase through development, works out chemistry and dilutions, and keeps my field notes. Every recommendation says where it came from, so I can tell whether a suggestion rests on my own logged results or on a manufacturer's datasheet.
 
 ---
 
@@ -150,21 +172,12 @@ Combine deep technical expertise in modern frontend technologies with proven lea
 - Technical Strategy
 - Roadmap Planning
 - Cross-functional Collaboration
-- Performance Management
-
----
-
-## Community
-
-- **WLVJS** Co-Organizer
-- **Lunch.js** Champion  
-- **JS.LA** Member
 
 ---
 
 ## Interests
 
-Film Photography • Travel • Music • Brewing
+Film Photography • Travel • Music • Special Olympics Volunteer
 `;
 
   return md;
@@ -178,16 +191,15 @@ Principal Engineer / Team Lead
 Contact:
 Email: work@fhwrdh.net
 Website: https://resume.fhwrdh.net
-LinkedIn: https://linkedin.com/in/franklinhenderson
 GitHub: https://github.com/fhwrdh
 Instagram: https://instagram.com/fhwrdh
 
 SUMMARY
 =======
 
-Principal Engineer with 20+ years building and scaling software systems across fintech, gaming, and advertising technology. Currently leading frontend architecture and team development at Tilia, where I build React/GraphQL interfaces to a system that processes millions in virtual economy transactions.
+Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.
 
-Combine deep technical expertise in modern frontend technologies with proven leadership experience, having grown engineering teams from solo contributors to high-performing units. Passionate about maintainable architecture, test-driven development, and mentoring engineers while maintaining hands-on contribution to complex technical challenges.
+We're here to solve problems. Sometimes with code. Either way the work depends on taking people seriously, the ones I build with and the ones who end up using what we make.
 
 EXPERIENCE
 ==========
@@ -218,12 +230,29 @@ EXPERIENCE
   txt += `SKILLS
 ======
 
-Frontend: JavaScript, TypeScript, React, HTML, CSS
-Backend: Node.js, Python, Go, GraphQL, REST APIs  
-Data: PostgreSQL, MySQL, NoSQL
-Infrastructure: AWS, Docker, CI/CD, GitHub
-Methodology: TDD, Agile
+Frontend: JavaScript, TypeScript, React, HTML, CSS, Vite
+APIs & Platform: GraphQL, REST APIs, API design, SDKs, multi-tenancy, authN/authZ
 AI Tools: Claude, Gemini, Copilot, MCP
+Backend: Node.js, Go, Python, microservices
+Data: PostgreSQL, MySQL, NoSQL
+Infrastructure: AWS, Docker, Linux, CI/CD, GitHub
+Methodology: TDD, Agile
+
+PROJECTS
+========
+
+Air Traffic Control, a work-in-flight dashboard
+A dashboard I built for myself. One command polls the issue tracker and GitHub across
+about 20 repos and caches what it finds. A second pass sorts that snapshot into a single
+board, closest-to-done first, and a Claude Code slash command renders it. The fetching
+and sorting are ordinary deterministic code that runs before the agent sees anything,
+so the board never guesses at status.
+
+Tomu, an MCP tool server for film photography
+An MCP server I run from Claude sessions. It tracks film from purchase through
+development, works out chemistry and dilutions, and keeps my field notes. Every
+recommendation says where it came from, so I can tell whether a suggestion rests on my
+own logged results or on a manufacturer's datasheet.
 
 LEADERSHIP
 ==========
@@ -233,19 +262,11 @@ LEADERSHIP
 • Technical Strategy  
 • Roadmap Planning
 • Cross-functional Collaboration
-• Performance Management
-
-COMMUNITY
-=========
-
-• WLVJS Co-Organizer
-• Lunch.js Champion
-• JS.LA Member
 
 INTERESTS
 =========
 
-Film Photography, Travel, Music, Brewing
+Film Photography, Travel, Music, Special Olympics Volunteer
 `;
 
   return txt;
