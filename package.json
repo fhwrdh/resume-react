@@ -21,6 +21,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "formats": "node scripts/generateFormats.js",
+    "pdf": "node scripts/generatePdf.js",
+    "artifacts": "npm run build && npm run formats && npm run pdf",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
   }

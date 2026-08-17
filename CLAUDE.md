@@ -12,8 +12,24 @@ This is a React-based resume and cover letter application built with Vite. It ge
 ```bash
 npm install          # Install dependencies
 npm run dev          # Start Vite development server
-npm run build        # Build for production
+npm run build        # Build for production (app bundle only)
 npm run preview      # Preview production build
+```
+
+### Regenerating the resume artifacts
+```bash
+npm run artifacts    # build + TXT/MD/JSON + PDF, the same set CI produces
+npm run formats      # TXT/MD/JSON only
+npm run pdf          # PDF only (requires dist/ to exist)
+```
+
+`npm run build` is deliberately just the app bundle, so a broken local Chrome
+cannot break a build. Use `npm run artifacts` after changing content, otherwise
+`dist/franklin.henderson.pdf` will be stale relative to `src/`.
+
+If puppeteer's bundled Chrome is unusable, point it at an installed browser:
+```bash
+PUPPETEER_EXECUTABLE_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" npm run artifacts
 ```
 
 ### Deployment
