@@ -24,7 +24,11 @@ async function generatePdf() {
   }
 
   try {
+    // CI uses the Chrome that puppeteer installs. Set PUPPETEER_EXECUTABLE_PATH
+    // to borrow a locally installed browser instead, e.g. when puppeteer's own
+    // download is unusable.
     const browser = await puppeteer.launch({
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
 
