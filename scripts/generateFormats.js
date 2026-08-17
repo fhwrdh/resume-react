@@ -45,6 +45,7 @@ const toWorkEntries = job => {
       position: job.title,
       startDate: toISODate(job.tenure.start),
       endDate: toISODate(job.tenure.end),
+      summary: job.summary,
       highlights: job.description.map(asHighlight),
     })];
   }
@@ -189,6 +190,7 @@ I've spent 20+ years building software across fintech, gaming, and ad tech. Thes
     } else {
       md += `### ${job.title}\n`;
       md += `**${job.companyName}** | ${formatDate(job.tenure.start, job.tenure.end)}\n\n`;
+      if (job.summary) md += `${job.summary}\n\n`;
       job.description.forEach((desc, i) => {
         // Roles mark a promotion within the same company; without them the
         // progression is invisible in the generated formats.
@@ -283,6 +285,7 @@ EXPERIENCE
       txt += `${job.title}\n`;
       txt += `${job.companyName} | ${formatDate(job.tenure.start, job.tenure.end)}\n`;
       txt += `${'-'.repeat(60)}\n\n`;
+      if (job.summary) txt += `${job.summary}\n\n`;
       job.description.forEach((desc, i) => {
         if (desc.role) txt += `${i ? '\n' : ''}${desc.role}\n`;
         txt += `• ${stripHtml(desc.text)}\n`;

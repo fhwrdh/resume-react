@@ -163,6 +163,18 @@ export const PointText = styled.li`
   }
 `;
 
+// Sits above a job's bullets: what the thing is, so the bullets can be what
+// was done to it.
+export const JobSummary = styled.p`
+  font-size: 0.9em;
+  margin: 0.4em 0 1em;
+  line-height: 1.5em;
+  color: #585858;
+  @media print {
+    color: #333;
+  }
+`;
+
 const Role = styled.li`
   font-size: 1.2em;
   font-weight: 600;

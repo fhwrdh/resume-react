@@ -8,15 +8,16 @@ export default {
         start: 'May 2019',
         end: 'Present',
       },
+      summary: `Joined as the first frontend engineer on Admin Tools, Tilia's internal operations platform. It processes millions in payouts and refunds, along with KYC, Watchlist, Settlements, and Tax.`,
       description: [
         {
-          text: `Joined as the first frontend engineer on Admin Tools, Tilia's internal operations platform. The platform is multi-tenant and role-governed, used by our compliance, fraud, and finance teams and by support staff at customer companies, who see it as their main window into Tilia. It processes millions in payouts and refunds, along with KYC, Watchlist, Settlements, and Tax`,
+          text: `Build and maintain the Admin Tools client, a React SPA of roughly 40 screens. Every screen is permission-aware, so compliance, fraud, and finance teams and the support staff at customer companies each see only what their role and tenant allow`,
+        },
+        {
+          text: `Currently building delegated personal access tokens so AI agents can act against the GraphQL layer on a person's behalf, bounded by that person's own role and tenant rather than granted authority of their own`,
         },
         {
           text: `Designed and built the GraphQL layer Admin Tools runs on. This layer sits atop a broad set of Go REST APIs and other data sources, and introduces a transaction model shaped around how the teams using Admin Tools think about their work`,
-        },
-        {
-          text: `Currently building delegated personal access tokens so AI agents can work against the GraphQL layer`,
         },
         {
           text: `Shipped a customer-facing embeddable widget for TOS compliance, KYC, and payments, then handed it off to a dedicated team. Drew the API and component boundaries with that handoff in mind`,

@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  TitleLine, Company, Title, CompanyName, Details, Tenure, Location, Description, Point } from './ui';
+  TitleLine, Company, Title, CompanyName, Details, Tenure, Location, Description, JobSummary, Point } from './ui';
 
 const Job = ({data}) => {
   if (data.live && data.live === 'off') return null;
-  const {breakAfter, companyName, title, tenure, location, description, compact} = data;
+  const {breakAfter, companyName, title, tenure, location, description, summary, compact} = data;
   
   if (compact) {
     return (
@@ -53,6 +53,7 @@ const Job = ({data}) => {
           </Tenure>
         </Details>
       </TitleLine>
+      {summary && <JobSummary>{summary}</JobSummary>}
       <Description>
         {description.map((p, idx) => <Point key={idx} role={p.role}>{p.text}</Point>)}
       </Description>
