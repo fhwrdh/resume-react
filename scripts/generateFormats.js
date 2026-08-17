@@ -10,16 +10,67 @@ const __dirname = path.dirname(__filename);
 const stripHtml = (text) => text.replace(/<[^>]*>/g, '').trim();
 const formatDate = (start, end) => end === 'Present' ? `${start} - Present` : `${start} - ${end}`;
 
+// JSON Resume requires ISO 8601 dates; the display data uses human formats like
+// "Jan 2014" and "Present". Anything unparseable is omitted rather than emitted
+// as an empty string, which would fail schema validation.
+const MONTHS = {
+  jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
+  jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12',
+};
+const toISODate = value => {
+  const v = String(value || '').trim();
+  if (!v || v === 'Present') return undefined;
+  const monthYear = v.match(/^([A-Za-z]{3})[a-z]*\s+(\d{4})$/);
+  if (monthYear) return `${monthYear[2]}-${MONTHS[monthYear[1].toLowerCase()]}`;
+  const year = v.match(/^(\d{4})$/);
+  return year ? year[1] : undefined;
+};
+
+const omitEmpty = obj =>
+  Object.fromEntries(
+    Object.entries(obj).filter(([, v]) => v !== undefined && v !== '' && !(Array.isArray(v) && !v.length))
+  );
+
+const asHighlight = desc =>
+  desc.role ? `${desc.role}: ${stripHtml(desc.text)}` : stripHtml(desc.text);
+
+// A compact entry collapses several employers into one block for display. The
+// structured output expands it again so each employer parses on its own, with
+// the dates the rendered formats deliberately leave off.
+const toWorkEntries = job => {
+  if (!job.compact) {
+    return [omitEmpty({
+      name: job.companyName,
+      location: job.location,
+      position: job.title,
+      startDate: toISODate(job.tenure.start),
+      endDate: toISODate(job.tenure.end),
+      highlights: job.description.map(asHighlight),
+    })];
+  }
+  return job.description.map(desc => {
+    const [head, ...rest] = stripHtml(desc.text).split(' - ');
+    const comma = head.indexOf(',');
+    return omitEmpty({
+      name: comma === -1 ? head.trim() : head.slice(0, comma).trim(),
+      location: comma === -1 ? '' : head.slice(comma + 1).trim(),
+      position: desc.role,
+      startDate: toISODate(desc.start),
+      endDate: toISODate(desc.end),
+      summary: rest.join(' - ').trim(),
+    });
+  });
+};
+
 // Generate JSON format (JSON Resume standard)
 function generateJSON() {
   const jsonResume = {
     "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
     "basics": {
       "name": "Franklin Henderson",
-      "label": "Principal Engineer / Team Lead",
       "email": "work@fhwrdh.net",
       "url": "https://resume.fhwrdh.net",
-      "summary": "Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.",
+      "summary": "I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I contribute to the underlying REST APIs too. I've run larger orgs before and chose to come back to building.",
       "location": {
         "city": "San Francisco",
         "region": "CA",
@@ -38,23 +89,17 @@ function generateJSON() {
         }
       ]
     },
-    "work": resumeData.experience.filter(job => !job.live || job.live !== 'off').map(job => ({
-      "name": job.companyName,
-      "position": job.title,
-      "url": "",
-      "startDate": job.tenure.start,
-      "endDate": job.tenure.end,
-      "summary": "",
-      "highlights": job.description.map(desc => stripHtml(desc.text))
-    })),
+    "work": resumeData.experience
+      .filter(job => !job.live || job.live !== 'off')
+      .flatMap(toWorkEntries),
     "skills": [
       {
         "name": "Frontend",
-        "keywords": ["JavaScript", "TypeScript", "React", "HTML", "CSS", "Vite"]
+        "keywords": ["JavaScript", "TypeScript", "React"]
       },
       {
-        "name": "APIs & Platform",
-        "keywords": ["GraphQL", "REST APIs", "API design", "SDKs", "Multi-tenancy", "AuthN/AuthZ"]
+        "name": "APIs",
+        "keywords": ["GraphQL", "REST API design"]
       },
       {
         "name": "AI Tools",
@@ -62,15 +107,23 @@ function generateJSON() {
       },
       {
         "name": "Backend",
-        "keywords": ["Node.js", "Go", "Python", "Microservices"]
+        "keywords": ["Node.js", "Go", "Python"]
+      },
+      {
+        "name": "Web",
+        "keywords": ["HTML", "CSS", "Vite"]
       },
       {
         "name": "Data",
         "keywords": ["PostgreSQL", "MySQL", "NoSQL"]
       },
       {
+        "name": "Source & CI",
+        "keywords": ["GitHub", "GitLab", "CI/CD"]
+      },
+      {
         "name": "Infrastructure",
-        "keywords": ["AWS", "Docker", "Linux", "CI/CD", "GitHub"]
+        "keywords": ["AWS", "Docker", "Linux"]
       },
       {
         "name": "Methodology",
@@ -94,6 +147,11 @@ function generateJSON() {
       {"name": "Travel"}, 
       {"name": "Music"},
       {"name": "Special Olympics Volunteer"}
+    ],
+    "education": [
+      {"institution": "CSUN", "area": "Math"},
+      {"institution": "Santa Monica College", "area": "CS"},
+      {"institution": "College of Marin", "area": "CS"}
     ]
   };
   
@@ -103,7 +161,6 @@ function generateJSON() {
 // Generate Markdown format
 function generateMarkdown() {
   let md = `# Franklin Henderson
-*Principal Engineer / Team Lead*
 
 📧 work@fhwrdh.net | 🌐 [resume.fhwrdh.net](https://resume.fhwrdh.net)  
 💻 [GitHub](https://github.com/fhwrdh) | 📸 [Instagram](https://instagram.com/fhwrdh)
@@ -112,9 +169,7 @@ function generateMarkdown() {
 
 ## Summary
 
-Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.
-
-We're here to solve problems. Sometimes with code. Either way the work depends on taking people seriously, the ones I build with and the ones who end up using what we make.
+I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I contribute to the underlying REST APIs too. I've run larger orgs before and chose to come back to building.
 
 ---
 
@@ -134,7 +189,10 @@ We're here to solve problems. Sometimes with code. Either way the work depends o
     } else {
       md += `### ${job.title}\n`;
       md += `**${job.companyName}** | ${formatDate(job.tenure.start, job.tenure.end)}\n\n`;
-      job.description.forEach(desc => {
+      job.description.forEach((desc, i) => {
+        // Roles mark a promotion within the same company; without them the
+        // progression is invisible in the generated formats.
+        if (desc.role) md += `${i ? '\n' : ''}**${desc.role}**\n\n`;
         md += `- ${stripHtml(desc.text)}\n`;
       });
       md += '\n';
@@ -145,17 +203,19 @@ We're here to solve problems. Sometimes with code. Either way the work depends o
 
 ## Skills
 
-**Frontend:** JavaScript, TypeScript, React, HTML, CSS, Vite  
-**APIs & Platform:** GraphQL, REST APIs, API design, SDKs, multi-tenancy, authN/authZ  
+**Frontend:** JavaScript, TypeScript, React  
+**APIs:** GraphQL, REST API design  
 **AI Tools:** Claude, Gemini, Copilot, MCP  
-**Backend:** Node.js, Go, Python, microservices  
+**Backend:** Node.js, Go, Python  
+**Web:** HTML, CSS, Vite  
 **Data:** PostgreSQL, MySQL, NoSQL  
-**Infrastructure:** AWS, Docker, Linux, CI/CD, GitHub  
+**Source & CI:** GitHub, GitLab, CI/CD  
+**Infrastructure:** AWS, Docker, Linux  
 **Methodology:** TDD, Agile
 
 ---
 
-## Projects
+## Recent Projects
 
 **Air Traffic Control, a work-in-flight dashboard**  
 A dashboard I built for myself. One command polls the issue tracker and GitHub across about 20 repos and caches what it finds. A second pass sorts that snapshot into a single board, closest-to-done first, and a Claude Code slash command renders it. The fetching and sorting are ordinary deterministic code that runs before the agent sees anything, so the board never guesses at status.
@@ -178,6 +238,12 @@ An MCP server I run from Claude sessions. It tracks film from purchase through d
 ## Interests
 
 Film Photography • Travel • Music • Special Olympics Volunteer
+
+---
+
+## Education
+
+CSUN (Math) • Santa Monica College (CS) • College of Marin (CS)
 `;
 
   return md;
@@ -186,7 +252,6 @@ Film Photography • Travel • Music • Special Olympics Volunteer
 // Generate plain text format
 function generateTXT() {
   let txt = `FRANKLIN HENDERSON
-Principal Engineer / Team Lead
 
 Contact:
 Email: work@fhwrdh.net
@@ -197,9 +262,7 @@ Instagram: https://instagram.com/fhwrdh
 SUMMARY
 =======
 
-Principal Engineer, 20+ years building software across fintech, gaming, and ad tech. Currently building Tilia's Admin Tools UI, the GraphQL API it runs on, and contributing to the underlying REST APIs. I've run larger orgs before and chose to come back to building.
-
-We're here to solve problems. Sometimes with code. Either way the work depends on taking people seriously, the ones I build with and the ones who end up using what we make.
+I've spent 20+ years building software across fintech, gaming, and ad tech. These days I'm building Tilia's Admin Tools UI, the GraphQL API it runs on, and the delegated tokens that let AI agents use it. I contribute to the underlying REST APIs too. I've run larger orgs before and chose to come back to building.
 
 EXPERIENCE
 ==========
@@ -220,7 +283,8 @@ EXPERIENCE
       txt += `${job.title}\n`;
       txt += `${job.companyName} | ${formatDate(job.tenure.start, job.tenure.end)}\n`;
       txt += `${'-'.repeat(60)}\n\n`;
-      job.description.forEach(desc => {
+      job.description.forEach((desc, i) => {
+        if (desc.role) txt += `${i ? '\n' : ''}${desc.role}\n`;
         txt += `• ${stripHtml(desc.text)}\n`;
       });
       txt += '\n';
@@ -230,16 +294,18 @@ EXPERIENCE
   txt += `SKILLS
 ======
 
-Frontend: JavaScript, TypeScript, React, HTML, CSS, Vite
-APIs & Platform: GraphQL, REST APIs, API design, SDKs, multi-tenancy, authN/authZ
+Frontend: JavaScript, TypeScript, React
+APIs: GraphQL, REST API design
 AI Tools: Claude, Gemini, Copilot, MCP
-Backend: Node.js, Go, Python, microservices
+Backend: Node.js, Go, Python
+Web: HTML, CSS, Vite
 Data: PostgreSQL, MySQL, NoSQL
-Infrastructure: AWS, Docker, Linux, CI/CD, GitHub
+Source & CI: GitHub, GitLab, CI/CD
+Infrastructure: AWS, Docker, Linux
 Methodology: TDD, Agile
 
-PROJECTS
-========
+RECENT PROJECTS
+===============
 
 Air Traffic Control, a work-in-flight dashboard
 A dashboard I built for myself. One command polls the issue tracker and GitHub across
@@ -267,6 +333,11 @@ INTERESTS
 =========
 
 Film Photography, Travel, Music, Special Olympics Volunteer
+
+EDUCATION
+=========
+
+CSUN (Math), Santa Monica College (CS), College of Marin (CS)
 `;
 
   return txt;
