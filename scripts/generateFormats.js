@@ -142,6 +142,12 @@ function generateJSON() {
         "keywords": ["Agent tooling", "CLI design", "Reconciliation", "Node.js"]
       },
       {
+        "name": "Ferry Timer",
+        "url": "https://ferrytimer.vercel.app",
+        "description": "A React PWA that answers one question: take the ferry or drive around? It compares three routes home using live traffic, ferry schedules, and real-time vessel positions, then names a winner or says the top two are too close to call. No single upstream failure can blank the screen, and a preference slider biases the recommendation without altering any of the times it reports.",
+        "keywords": ["React", "TypeScript", "PWA", "Real-time data", "Graceful degradation"]
+      },
+      {
         "name": "Tomu",
         "description": "An MCP server I run from Claude sessions. It tracks film from purchase through development, works out chemistry and dilutions, and keeps my field notes. Every recommendation says where it came from, so I can tell whether a suggestion rests on my own logged results or on a manufacturer's datasheet.",
         "keywords": ["MCP", "Agent tooling", "Tool design"]
@@ -155,7 +161,7 @@ function generateJSON() {
       {"name": "Film Photography"},
       {"name": "Travel"}, 
       {"name": "Music"},
-      {"name": "Special Olympics"}
+      {"name": "Special Olympics Volunteer"}
     ]
   };
   
@@ -226,6 +232,9 @@ I've spent 20+ years building software across fintech, gaming, and ad tech. Thes
 **Air Traffic Control, a work-in-flight dashboard**  
 A dashboard I built for myself. One command polls the issue tracker and GitHub across about 20 repos and caches what it finds. A second pass sorts that snapshot into a single board, closest-to-done first, and a Claude Code slash command renders it. The fetching and sorting are ordinary deterministic code that runs before the agent sees anything, so the board never guesses at status.
 
+**Ferry Timer, a ferry-or-drive decision app for Puget Sound**  
+A React PWA that answers one question: take the ferry or drive around? It compares three routes home using live traffic, ferry schedules, and real-time vessel positions, then names a winner or says the top two are too close to call. No single upstream failure can blank the screen, and a preference slider biases the recommendation without altering any of the times it reports.
+
 **Tomu, an MCP tool server for film photography**  
 An MCP server I run from Claude sessions. It tracks film from purchase through development, works out chemistry and dilutions, and keeps my field notes. Every recommendation says where it came from, so I can tell whether a suggestion rests on my own logged results or on a manufacturer's datasheet.
 
@@ -237,7 +246,6 @@ An MCP server I run from Claude sessions. It tracks film from purchase through d
 - Mentoring  
 - Technical Strategy
 - Roadmap Planning
-- Cross-functional Collaboration
 
 ---
 
@@ -249,7 +257,7 @@ CSUN (Math) • Santa Monica College (CS)
 
 ## Interests
 
-Film Photography • Travel • Music • Special Olympics
+Film Photography • Travel • Music • Special Olympics Volunteer
 `;
 
   return md;
@@ -322,6 +330,13 @@ board, closest-to-done first, and a Claude Code slash command renders it. The fe
 and sorting are ordinary deterministic code that runs before the agent sees anything,
 so the board never guesses at status.
 
+Ferry Timer, a ferry-or-drive decision app for Puget Sound
+A React PWA that answers one question: take the ferry or drive around? It compares
+three routes home using live traffic, ferry schedules, and real-time vessel
+positions, then names a winner or says the top two are too close to call. No single
+upstream failure can blank the screen, and a preference slider biases the
+recommendation without altering any of the times it reports.
+
 Tomu, an MCP tool server for film photography
 An MCP server I run from Claude sessions. It tracks film from purchase through
 development, works out chemistry and dilutions, and keeps my field notes. Every
@@ -335,7 +350,6 @@ LEADERSHIP
 • Mentoring
 • Technical Strategy  
 • Roadmap Planning
-• Cross-functional Collaboration
 
 EDUCATION
 =========
@@ -345,7 +359,7 @@ CSUN (Math), Santa Monica College (CS)
 INTERESTS
 =========
 
-Film Photography, Travel, Music, Special Olympics
+Film Photography, Travel, Music, Special Olympics Volunteer
 `;
 
   return txt;

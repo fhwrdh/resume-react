@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  AccountMultipleIcon,
   AirplaneTakeoffIcon,
   CameraIcon,
   ChartLineIcon,
@@ -137,7 +136,6 @@ const LeadershipSection = () => (
       <Bullet icon={SchoolIcon}>Mentoring</Bullet>
       <Bullet icon={ChartLineIcon}>Technical Strategy</Bullet>
       <Bullet icon={MapIcon}>Roadmap Planning</Bullet>
-      <Bullet icon={AccountMultipleIcon}>Cross-functional Collaboration</Bullet>
     </Description>
   </Section>
 );
@@ -159,7 +157,7 @@ const InterestsSection = () => (
       <Bullet icon={CameraIcon}>Film Photography</Bullet>
       <Bullet icon={AirplaneTakeoffIcon}>Travel</Bullet>
       <Bullet icon={HeadphonesIcon}>Music</Bullet>
-      <Bullet icon={MedalIcon}>Special Olympics</Bullet>
+      <Bullet icon={MedalIcon}>Special Olympics Volunteer</Bullet>
     </Description>
   </Section>
 );
@@ -187,6 +185,9 @@ const ProjectsSection = () => (
     <Description>
       <Point role="Air Traffic Control, a work-in-flight dashboard">
         A dashboard I built for myself. One command polls the issue tracker and GitHub across about 20 repos and caches what it finds. A second pass sorts that snapshot into a single board, closest-to-done first, and a Claude Code slash command renders it. The fetching and sorting are ordinary deterministic code that runs before the agent sees anything, so the board never guesses at status.
+      </Point>
+      <Point role="Ferry Timer, a ferry-or-drive decision app for Puget Sound">
+        A React PWA that answers one question: take the ferry or drive around? It compares three routes home using live traffic, ferry schedules, and real-time vessel positions, then names a winner or says the top two are too close to call. No single upstream failure can blank the screen, and a preference slider biases the recommendation without altering any of the times it reports.
       </Point>
       <Point role="Tomu, an MCP tool server for film photography">
         An MCP server I run from Claude sessions. It tracks film from purchase through development, works out chemistry and dilutions, and keeps my field notes. Every recommendation says where it came from, so I can tell whether a suggestion rests on my own logged results or on a manufacturer's datasheet.

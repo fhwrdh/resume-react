@@ -44,7 +44,8 @@ export const Right = styled.div`
   flex-grow: 2;
   font-size: 1.1em;
   @media print {
-    padding-right: 0;
+    padding: 0 0 0 1em;
+    min-width: 0;
   }
 `;
 
@@ -63,6 +64,9 @@ export const Name = styled.h1`
 export const Section = styled.div`
   line-height: 1.5em;
   margin-bottom: 1.5em;
+  @media print {
+    margin-bottom: 0.9em;
+  }
 `;
 export const SectionTitle = styled.h2`
   ${({top}) => top === true && 'margin-top: 0;'};
@@ -84,6 +88,10 @@ export const Summary = styled(Description)``;
 export const BulletLi = styled.li`
   margin-bottom: 1em;
   line-height: 1.9em;
+  @media print {
+    margin-bottom: 0.2em;
+    line-height: 1.45em;
+  }
 `;
 
 export const BulletContent = styled.div`
@@ -124,6 +132,7 @@ export const Company = styled.div`
   }
   margin-top: 1em;
   @media print {
+    margin-top: 0.6em;
     ${({breakAfter}) => breakAfter && 'page-break-after: always;'};
   }
 `;
@@ -160,6 +169,8 @@ export const PointText = styled.li`
   color: #585858;
   @media print {
     color: #333;
+    margin-bottom: 0.55em;
+    line-height: 1.38em;
   }
 `;
 
@@ -172,6 +183,8 @@ export const JobSummary = styled.p`
   color: #585858;
   @media print {
     color: #333;
+    margin: 0.3em 0 0.55em;
+    line-height: 1.38em;
   }
 `;
 
